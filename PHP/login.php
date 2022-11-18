@@ -1,3 +1,15 @@
+<?php
+include 'db_connect.php';
+
+$ready = (isset($_GET["login"])) ? true : false;
+
+if($ready){
+    $login = $_GET["login"];
+    $pass = $_GET["password"];
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -20,34 +32,34 @@
             <legend style="text-align: center;">Log In</legend>
             <form action="login.php" method="get">
                 <div class="row">
-                    <div class="col-6" style="text-align: right;">
+                    <div class="col-sm col-md-6 col-lg-6" style="text-align: right;">
                         <label>Login: </label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm col-md-6 col-lg-6">
                         <input type="text" name="login">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-6" style="text-align: right;">
+                    <div class="col-sm-6 col-md-6 col-lg-6" style="text-align: right;">
                         <label>Password: </label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
                         <input type="password" name="password">
                     </div>
                 </div>
 
                 <div class="row justify-content-sm-center">
-                    <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" name="login" value="Log in">
+                    <div class="col-sm-auto col-md-auto col-lg-auto">
+                        <input type="submit" value="Log in">
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-6" style="text-align: right;">
+                    <div class="col-sm-6 col-md-6 col-lg-6" style="text-align: right;">
                         <a href="index.html">Back to the main page</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
                         <a href="registration.html">Registration</a>
                     </div>
                 </div>
@@ -57,6 +69,15 @@
         <!-- Password (input) -->
         <!-- Submit -->
         <!-- Back to the main page (Link) --> <!-- Registration (Link) -->
+        <?php
+        if($ready){
+            for ($i=0; $i < count($rows); $i++) { 
+                if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"])
+                    echo "<h1>".$login." ".$pass."</h1>";
+                    break;
+            }
+        }
+        ?>
     </div>
 </body>
 </html>
