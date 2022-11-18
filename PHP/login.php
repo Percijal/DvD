@@ -72,9 +72,12 @@ if($ready){
         <?php
         if($ready){
             for ($i=0; $i < count($rows); $i++) { 
-                if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"])
-                    echo "<h1>".$login." ".$pass."</h1>";
-                    break;
+                if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"]){
+                    if($rows[$i][""]=="true")
+                        // Tu przekierowanie admin -> indexAdmin
+                    else
+                        // Tu przekierowanie uzytkownik -> index
+                }
             }
         }
         ?>
