@@ -1,3 +1,15 @@
+<?php
+include 'db_connect.php';
+
+$ready = (isset($_GET["login"])) ? true : false;
+
+if($ready){
+    $login = $_GET["login"];
+    $pass = $_GET["password"];
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -39,7 +51,7 @@
 
                 <div class="row justify-content-sm-center">
                     <div class="col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" name="login" value="Log in">
+                        <input type="submit" value="Log in">
                     </div>
                 </div>
                 
@@ -57,6 +69,15 @@
         <!-- Password (input) -->
         <!-- Submit -->
         <!-- Back to the main page (Link) --> <!-- Registration (Link) -->
+        <?php
+        if($ready){
+            for ($i=0; $i < count($rows); $i++) { 
+                if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"])
+                    echo "<h1>".$login." ".$pass."</h1>";
+                    break;
+            }
+        }
+        ?>
     </div>
 </body>
 </html>
