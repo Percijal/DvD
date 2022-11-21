@@ -1,7 +1,19 @@
 <?php
 include 'db_connect.php';
 
-$ready = (isset($_GET["login"])) ? true : false;
+function isInBase()
+{
+    global $rows, $login;
+    foreach ($rows as $k => $v) {
+        if($v["login"] == $login){
+            echo "<h1>NAZWA UŻYTKOWNIKA JEST ZAJĘTA</h1>";
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+$ready = (isset($_POST["login"])) ? true : false;
 
 if($ready){
     $email = $_POST["e-mail"];
@@ -9,6 +21,17 @@ if($ready){
     $pass = $_POST["password"];
     $name = $_POST["name"];
     $surname = $_POST["surname"];
+}
+
+if($ready){
+    if(isInBase()){
+        $query = $pdo -> query("INSERT INTO Users (`name`, `surname`, `login`, `password`, `email`) VALUES ('".$name."', '".$surname."', '".$login."','".$pass."','".$email."');");
+        foreach ($_POST as $k=>$v) {
+            unset($_POST[$k]);
+        }
+        header("Location: /php/login.php");
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -25,13 +48,32 @@ if($ready){
             padding: 0px;
             margin: 0px;
         }
+        .button{
+            padding: 5px;
+            margin: 5px;
+            width: 65px;
+            border-radius: 25px;
+            box-shadow: 7px 5px 5px gold;
+            font-style: italic;
+        }
+        label{
+            font-style: italic;
+        }
+        a{
+            font-style: italic;
+            text-decoration: none;
+            color: gold;
+        }
+        a:hover{
+            color:orangered
+        }
     </style>
 </head>
-<body>
+<body style="background-color: beige;">
     <div class="container-flow">
-        <fieldset>
-            <legend style="text-align: center;">Registration</legend>
-            <form>
+        <fieldset style="background-color: gray; margin: 17%; padding: 20px; border-radius: 50px;">
+            <legend style="text-align: center; font-style: italic; font-weight: bold;">Registration</legend>
+            <form action="registration.php" method="post">
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
                         <label>E-mail: </label>
@@ -88,7 +130,7 @@ if($ready){
 
                 <div class="row justify-content-sm-center">
                     <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" name="login" value="Register">
+                        <input type="submit" value="Register" class="button">
                     </div>
                 </div>
                 
@@ -97,11 +139,12 @@ if($ready){
                         <a href="index.html">Back to the main page</a>
                     </div>
                     <div class="col-6">
-                        <a href="login.html">Login</a>
+                        <a href="login.php">Login</a>
                     </div>
                 </div>
             </form>
         </fieldset>
+
         <!-- e-mail (input)(To the first login) -->
         <!-- Login (input)(User's name/User's id)(Every another login) -->
         <!-- User's Name (input) -->
@@ -110,15 +153,8 @@ if($ready){
         <!-- Repeat Password (input) -->
         <!-- Submit -->
         <!-- Back to the main page (Link) --> <!-- Login (Link) -->
-        <?php
-        if($ready){
-            $query = $pdo -> query("INSERT INTO USERS(`name`, `surname`, `login`, `password`, `email`)
-            VALUES (".$name.", ".$surname.", ".$login.",".$pass.",".$email.");");
-        }
-        ?>
     </div>
 </body>
 </html>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
