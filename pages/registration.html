@@ -12,12 +12,31 @@
             padding: 0px;
             margin: 0px;
         }
+        .button{
+            padding: 5px;
+            margin: 5px;
+            width: 65px;
+            border-radius: 25px;
+            box-shadow: 7px 5px 5px gold;
+            font-style: italic;
+        }
+        label{
+            font-style: italic;
+        }
+        a{
+            font-style: italic;
+            text-decoration: none;
+            color: gold;
+        }
+        a:hover{
+            color:orangered
+        }
     </style>
 </head>
-<body>
+<body style="background-color: beige;">
     <div class="container-flow">
-        <fieldset>
-            <legend style="text-align: center;">Registration</legend>
+        <fieldset style="background-color: gray; margin: 17%; padding: 20px; border-radius: 50px;">
+            <legend style="text-align: center; font-style: italic; font-weight: bold;">Registration</legend>
             <form>
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
@@ -75,7 +94,7 @@
 
                 <div class="row justify-content-sm-center">
                     <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" name="login" value="Register">
+                        <input type="submit" name="login" value="Register" class="button">
                     </div>
                 </div>
                 
