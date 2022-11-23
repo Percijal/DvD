@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db_connect.php';
 
 $ready = (isset($_GET["login"])) ? true : false;
@@ -100,14 +101,10 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
     if($ready){
         for ($i=0; $i < count($rows); $i++) {
             if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"]){
-                if($rows[$i]["is_admin"]=="true"){
-                    header("Location: /php/index_admin.php");
-                    exit();
-                }
-                else{
-                    header("Location: /php/index.html");
-                    exit();
-                }
+                $_SESSION["UserId"] = $rows[$i]["id"];
+                $_SESSION["isAdmin"] = $rows[$i]["is_admin"];
+                header("Location: /php/index.php");
+                exit();
             }
             else{
                 print("ZŁE DANE");

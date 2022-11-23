@@ -6,7 +6,7 @@ function isInBase()
     global $rows, $login;
     foreach ($rows as $k => $v) {
         if($v["login"] == $login){
-            echo "<h1>NAZWA UŻYTKOWNIKA JEST ZAJĘTA</h1>";
+            echo "<script> console.log('NAZWA UŻYTKOWNIKA JEST ZAJĘTA')</script>";
             return FALSE;
         }
     }
@@ -25,7 +25,11 @@ if($ready){
 
 if($ready){
     if(isInBase()){
-        $query = $pdo -> query("INSERT INTO Users (`name`, `surname`, `login`, `password`, `email`) VALUES ('".$name."', '".$surname."', '".$login."','".$pass."','".$email."');");
+        $sql = new SqlLiteQueryBuilder();
+        $query = $pdo->prepare($sql -> insert("Users", ["name", "surname", "login", "password", "email"])
+                                    -> values([$name,$surname,$login,$pass,$email])
+                                    -> getSQL());
+        $query->execute();
         foreach ($_POST as $k=>$v) {
             unset($_POST[$k]);
         }
@@ -136,7 +140,7 @@ if($ready){
                 
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
-                        <a href="index.html">Back to the main page</a>
+                        <a href="index.php">Back to the main page</a>
                     </div>
                     <div class="col-6">
                         <a href="login.php">Login</a>
