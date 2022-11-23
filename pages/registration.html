@@ -7,6 +7,7 @@
     <title>Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="../JS/registrationPage.js"></script> 
     <style>
         *{
             padding: 0px;
@@ -37,7 +38,7 @@
     <div class="container-flow">
         <fieldset style="background-color: gray; margin: 17%; padding: 20px; border-radius: 50px;">
             <legend style="text-align: center; font-style: italic; font-weight: bold;">Registration</legend>
-            <form action="registration.php" method="get">
+            <form action="registration.php" method="get" name="registration" onsubmit="return validateForm()">
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
                         <label>E-mail: </label>
@@ -89,6 +90,12 @@
                     </div>
                     <div class="col-6">
                         <input type="password" name="passwordRepeated" required>
+                    </div>
+                </div>
+
+                <div class="row" id="errorDiv" hidden>
+                    <div div class="col-12" style="text-align: center;">
+                        <ul id="info" style="color: red; text-decoration: none; list-style: none;"></ul>
                     </div>
                 </div>
 
