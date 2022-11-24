@@ -31,7 +31,10 @@
         .test{
             color: bisque;
         }
-        .ok{
+        .profileIcon{
+            padding-left: 10px;
+        }
+        .cartIcon{
             padding-left: 10px;
             padding-right: 10px;
         }
@@ -43,6 +46,21 @@
         a:hover{
             color:orangered
         }
+        @media only screen and (min-width: 1170px){
+            .navbarButton {
+                width: 100px;
+            }
+        }
+        @media only screen and (max-width: 1169px) and (min-width: 970px){
+            .navbarButton {
+                width: 85px;
+            }
+        }
+        @media only screen and (max-width: 969px) and (min-width: 750px){
+            .navbarButton {
+                width: 75px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -52,15 +70,15 @@
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
                       <a class="navbar-brand col-4" href="index.html">Logo strony</a>
-                      <div class="col-5"></div> <!-- duzy - 5, sredni - 4, reszta - 3 -->
-                      <div class="ok" >
+                      <div class="col-sm-3 col-md-4 col-lg-5"></div> 
+                      <div class="profileIcon">
                         <a class="nav-link col-1" href="login.html"><img src="../images/user.png" alt="user.png" width="50px" height="50px"></a>
                       </div>
-                      <div class="ok" >
+                      <div class="cartIcon">
                         <a class="nav-link col-1" href="registration.html"><img src="../images/cart.png" alt="cart.png" width="50px" height="50px"></a>
                       </div>
                       <div class="col-1">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                       </div>
