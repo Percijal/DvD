@@ -79,7 +79,7 @@ if($ready){
                 
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
-                        <a href="index.html">Back to the main page</a>
+                        <a href="index.php">Back to the main page</a>
                     </div>
                     <div class="col-6">
                         <a href="registration.php">Registration</a>

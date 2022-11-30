@@ -76,7 +76,7 @@ $isAdmin = isset($_SESSION["isAdmin"]); //boolean
         <div class="top" style="background-color: gray">
             <nav class="navbar" style="padding: 0px;">
                 <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                    <a class="navbar-brand col-4" href="index.html">Logo strony</a>
+                    <a class="navbar-brand col-4" href="index.php">Logo strony</a>
                     <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                     <div class="profileIcon">
                         <a class="nav-link col-1" href="
@@ -130,7 +130,7 @@ $isAdmin = isset($_SESSION["isAdmin"]); //boolean
                         if($isAdmin)
                             echo "
                             <li class='nav-item'>
-                                <a class='nav-link' href='#'>Admin Settings</a>
+                                <a class='nav-link' href='index_admin.php'>Admin Settings</a>
                             </li>"
                     ?>
 
