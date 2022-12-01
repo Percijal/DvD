@@ -75,10 +75,10 @@
                       <a class="navbar-brand col-4" href="index.html">Logo strony</a>
                       <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                       <div class="profileIcon">
-                        <a class="nav-link col-1" href="login.html"><img src="../images/user.png" alt="user.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../pages/profile.html"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
                       </div>
                       <div class="cartIcon">
-                        <a class="nav-link col-1" href="registration.html"><img src="../images/cart.png" alt="cart.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../pages/cart.html"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
                       </div>
                       <div class="col-1">
                         <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,29 +86,29 @@
                         </button>
                       </div>
                       <div class="collapse navbar-collapse" id="navbarScroll">
-                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                          </li>
-
-                          <!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="../admin/UserBase.html">Admin Settings</a>
-                          </li>
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../pages/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/profile.html">Profile</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  More
+                                </a>
+                                <ul class="dropdown-menu" >
+                                  <li><a class="dropdown-item" href="../pages/cart.html">Cart</a></li>
+                                  <li><a class="dropdown-item" href="../pages/contact.html">Contact</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
+                                </ul>
+                            </li>
+    
+                              <!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="../admin/UserBase.html">Admin Settings</a>
+                            </li>
 
                         </ul>
                         <form class="d-flex" role="search">
@@ -124,9 +124,6 @@
         
             <div class="main" style="display: block;">
                 
-                <div class="logoBanner" style="display: block; padding: 15px;">
-                    <p style="border: 1px solid black;margin-top: 10px; padding: 20px;">Miejsce na banner</p>
-                </div>
                 <!-- ====================================================================== -->
                 <div class="main" style="padding: 15px;">
                     <div class="row">
