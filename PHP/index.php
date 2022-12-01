@@ -1,10 +1,15 @@
 <?php
 session_start();
+require("widgets.php");
+require("db_connect.php");
 
 $logged = isset($_SESSION["UserId"]); //boolean
 $isAdmin = isset($_SESSION["isAdmin"]); //boolean
 
-
+$sql = new SqlLiteQueryBuilder();
+$query = $pdo -> query($sql ->select("DVDs", ["*"])
+                ->getSQL());
+$rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -88,7 +93,7 @@ $isAdmin = isset($_SESSION["isAdmin"]); //boolean
                         echo "login.php";
                         }
                         ?>
-                        "><img src="../images/user.png" alt="user.png" width="50px" height="50px"></a>
+                        "><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
                     </div>
                     <div class="cartIcon" >
                         <a class="nav-link col-1" href="
@@ -100,7 +105,7 @@ $isAdmin = isset($_SESSION["isAdmin"]); //boolean
                         echo "registration.php";
                         }
                         ?>
-                        "><img src="../images/cart.png" alt="cart.png" width="50px" height="50px"></a>
+                        "><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
                     </div>
                     <div class="col-1">
                         <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -180,46 +185,11 @@ $isAdmin = isset($_SESSION["isAdmin"]); //boolean
                         </div><br>
                         <div class="row" style="text-align: center;">
                            
-                                    <!-- Start PHP -->
-
-                                    <div class="col-3 discInfoBox">
-                                        <!--    -> Zdjęcie (output z bazy)
-                                                -> Nazwa Płyty (output z bazy)
-                                                -> Cena (output z bazy)
-                                                -> Więcej informacji (link do strony, sesją na szkelecie 
-                                                strony wiświetlimy powiększone wszystkie informacje z bazy)
-                                                -> Dodaj do koszyka (guzik z odniesieniem do koszyka)
-                                        -->
-                                        <img src="">
-                                        <p>"Nazwa płyty"</p>
-                                        <p>Cena</p>
-                                        <button type="submit">dodaj do koszyka</button><br>
-                                        <a href="DanePłyta">wincej informacji</a>
-
-                                    </div>
-                                    <div class="col-3 discInfoBox">
-                                        <img src="">
-                                        <p>"Nazwa płyty"</p>
-                                        <p>Cena</p>
-                                        <button type="submit">dodaj do koszyka</button><br>
-                                        <a href="DanePłyta">wincej informacji</a>
-                                    </div>
-                                    <div class="col-3 discInfoBox">
-                                        <img src="">
-                                        <p>"Nazwa płyty"</p>
-                                        <p>Cena</p>
-                                        <button type="submit">dodaj do koszyka</button><br>
-                                        <a href="DanePłyta">wincej informacji</a>
-                                    </div>
-                                    <div class="col-3 discInfoBox">
-                                        <img src="">
-                                        <p>"Nazwa płyty"</p>
-                                        <p>Cena</p>
-                                        <button type="submit">dodaj do koszyka</button><br>
-                                        <a href="DanePłyta">wincej informacji</a>
-                                    </div>
-                                        
-                                    <!-- END PHP -->
+                            <?php
+                                for ($i=0; $i < 4; $i++) { 
+                                    StaticFactory::factory('classic', $rows[$i]);
+                                }
+                            ?>
 
                         </div>
                     </div><br>
