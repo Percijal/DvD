@@ -7,7 +7,7 @@ final class StaticFactory
     {
         return match ($type) {
             'classic' => new ClassicWidget($data),
-            'discounted' => new DiscountedWidget($data, $discount=0),
+            'discounted' => new DiscountedWidget($data, $discount),
             default => throw new InvalidArgumentException('Unknown type given'),
         };
     }

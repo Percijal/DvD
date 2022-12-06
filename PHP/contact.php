@@ -61,13 +61,13 @@
             <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                      <a class="navbar-brand col-4" href="index.html">Logo strony</a>
+                      <a class="navbar-brand col-4" href="index.php">Logo strony</a>
                       <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                       <div class="profileIcon">
-                        <a class="nav-link col-1" href="../pages/profile.html"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../php/profile.php"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
                       </div>
                       <div class="cartIcon">
-                        <a class="nav-link col-1" href="../pages/cart.html"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../php/cart.php"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
                       </div>
                       <div class="col-1">
                         <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,26 +77,26 @@
                       <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+							<a class="nav-link active" aria-current="page" href="index.php">Home</a>
 							</li>
 							<li class="nav-item">
-							<a class="nav-link" href="profile.html">Profile</a>
+							<a class="nav-link" href="profile.php">Profile</a>
 							</li>
 							<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								More
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="cart.html">Cart</a></li>
-								<li><a class="dropdown-item" href="contact.html">Contact</a></li>
+								<li><a class="dropdown-item" href="cart.php">Cart</a></li>
+								<li><a class="dropdown-item" href="contact.php">Contact</a></li>
 								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
+								<li><a class="dropdown-item" href="logOut.php">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
 							</ul>
 							</li>
 
 							<!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
 							<li class="nav-item">
-                                <a class="nav-link" href="../admin/UserBase.html">Admin Settings</a>
+                                <a class="nav-link" href="../admin/UserBase.php">Admin Settings</a>
 							</li>
 
                         </ul>

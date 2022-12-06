@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Index</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
@@ -23,7 +23,7 @@
         .top{
             background-color: bisque;
         }
-        .discInfoBox{
+        .users{
             border: 1px solid black;
             border-radius: 10px;
             padding: 5px;
@@ -38,14 +38,6 @@
             padding-left: 10px;
             padding-right: 10px;
         }
-        .FromUPaBit{
-            padding-top: 20px;
-        }
-        .UsersInfo{
-            border-left: 1px solid black;
-            padding-top: 15px;
-            text-align: left;
-        }
         a{
             font-style: italic;
             text-decoration: none;
@@ -54,7 +46,7 @@
         a:hover{
             color:orangered
         }
-        table, th, td {
+        hr{
             border: 1px solid black;
         }
         @media only screen and (min-width: 1170px){
@@ -80,13 +72,13 @@
             <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                      <a class="navbar-brand col-4" href="index.html">Logo strony</a>
+                      <a class="navbar-brand col-4" href="index.php">Logo strony</a>
                       <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                       <div class="profileIcon">
-                        <a class="nav-link col-1" href="../pages/profile.html"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../php/profile.php"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
                       </div>
                       <div class="cartIcon">
-                        <a class="nav-link col-1" href="../pages/cart.html"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
+                        <a class="nav-link col-1" href="../php/cart.php"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
                       </div>
                       <div class="col-1">
                         <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,27 +87,27 @@
                       </div>
                       <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="profile.html">Profile</a>
+                                <a class="nav-link" href="../php/profile.php">Profile</a>
                             </li>
                             <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                More
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="cart.html">Cart</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
-                            </ul>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  More
+                                </a>
+                                <ul class="dropdown-menu" >
+                                  <li><a class="dropdown-item" href="../php/cart.php">Cart</a></li>
+                                  <li><a class="dropdown-item" href="../php/contact.php">Contact</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="logOut.php">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
+                                </ul>
                             </li>
-
-                            <!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
+    
+                              <!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
                             <li class="nav-item">
-                                <a class="nav-link" href="../admin/UserBase.html">Admin Settings</a>
+                                <a class="nav-link" href="../admin/UserBase.php">Admin Settings</a>
                             </li>
 
                         </ul>
@@ -131,57 +123,64 @@
         
         
             <div class="main" style="display: block;">
+                
+                <!-- ====================================================================== -->
+                <div class="main" style="padding: 15px;">
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                            Admin => Users base.php (Nazwa Strony)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                            Informacje o stronie
+                        </div>
+                    </div><br>
+                    <div class="users">
 
-                <div class="row FromUPaBit">
-                    <div class="col logoBanner">
-                        <!-- skrypt wybierający z bazy iconę profilu w zależności od takiej jaka jest przypisana do użytkownika.  -->
-                        <!-- z założenia użytkownik będzie mógł ją zmienić. Są one dodane do folderu images -->
-                        
-                    </div>
-                    <div class="col UsersInfo">
-                        <p style="color:white;">User ID: ...</p>
-                        <p style="color:white;">name: ...</p>
-                        <p style="color:white;">Surname: ...</p>
-                    </div>
+                        <div class="row" style="text-align: center;">
+                           
+                            <!-- Start PHP -->
+                                <div class="col-2">
+                                    <!-- Users e-mail -->
+                                    email
+                                </div>
+                                <div class="col-2">
+                                    <!-- Users login  -->
+                                    login
+                                </div>
+                                <div class="col-2">
+                                    <!-- Users name -->
+                                    name
+                                </div>
+                                <div class="col-2">
+                                    <!-- Users surename -->
+                                    surname
+                                </div>
+                                <div class="col-4">
+                                    <!-- Edit user -->
+                                    <!-- Delete user -->
+                                    <a href="#">edit</a> || <a href="#">delete user</a>
+                                </div>
+                            <!-- END PHP -->
+
+                        </div>
+                        <hr>
+                        <div class="row">
+
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                                <q style="color:white;">If you're not a good shot today, don't worry. There are other ways to be useful.</q>
+                        </div>
+                  </div>
+                    
                 </div>
-                <hr style="border: 1px solid black;">
-                <div class="row">
-                    <div class="col" style="text-align: center;">
-                        <q style="color:white;">Twoje Wypożyczenia</q>
-                    </div>
-                </div><br>
-
-                    <!-- jeśli tabela jest pusta na stronie wyświetla się tekst poniżej -->
-
-                    <!-- <q>To co?</q>
-                    <q>Pora coś kupić :3</q> -->
-
-                    <!-- jeśli uzytkownik ma cos wykupionego wyswietlimy to PHP'em w tabeli pod jego profilem -->
-                <div style="text-align: center; position: relative; margin-left: 45.34%;">
-                    <table>
-                        <tr>
-                            <th>id.</th>
-                            <th>image</th>
-                            <th>tytul</th>
-                            <th>Termin zwrotu</th>
-                        </tr>
-                        <tr>
-                            <td>1. </td>
-                            <td><img src="" alt="Photo"></td>
-                            <td>tytul</td>
-                            <td>Termin zwrotu (data)</td>
-                        </tr>
-                        <tr>
-                            <td><!-- id filmu --></td>
-                            <td><!-- miniaturka filmu --></td>
-                            <td><!-- dane --></td>
-                            <td><!-- data zwrotu --></td>
-                        </tr>
-                    </table>
-                </div>
+                <!-- ====================================================================== -->
+                
+                
             </div>
-
-            <!-- ====================================================================== -->
         
             <div class="footer sticky-bottom bg-gray opacity-100 w-100"  style="background-color: bisque;">
                 <div class="row">
@@ -189,7 +188,7 @@
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.html" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
                       </div>
                 </div>
             </div>

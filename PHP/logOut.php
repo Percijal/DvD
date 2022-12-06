@@ -3,6 +3,6 @@ session_start();
 
 session_destroy();
 
-header("Location: /php/index.php");
+header("Location: /DvD/php/index.php");
 exit();
 ?>
