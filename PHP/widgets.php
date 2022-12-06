@@ -39,7 +39,7 @@ class DiscountedWidget implements Widget
         return print('<div class="col-3 discInfoBox">
                 <img src="../images/FILMS/'. $data["image"] .'">
                 <p>'. $data["title"] .'</p>
-                <p>Cena</p><s>'. $data["price"] .'</s><p>'. $data["price"] - ($discount/100 * $data["price"]) .'</p>
+                <p>Cena</p><s>'. $data["price"] .'</s><p>'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
                 <button type="submit">DO KOSZYKA</button><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');

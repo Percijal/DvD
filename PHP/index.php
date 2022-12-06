@@ -187,6 +187,15 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                            
                             <?php
                                 for ($i=0; $i < 4; $i++) { 
+                                    StaticFactory::factory('discounted', $rows[$i], 20);
+                                }
+                            ?>
+
+                        </div>
+                        <div class="row" style="text-align: center;">
+                           
+                            <?php
+                                for ($i=0; $i < 4; $i++) { 
                                     StaticFactory::factory('classic', $rows[$i]);
                                 }
                             ?>
