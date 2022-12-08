@@ -7,53 +7,8 @@
     <title>Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-        }
-        .container-fluid{
-            background-color: gray;
-            padding: 0px;
-        }
+    <link rel="stylesheet" href="../CSS/pageStyles.css">
 
-        .footer{
-            background-color: bisque;
-        }
-        .top{
-            background-color: bisque;
-        }
-        .discInfoBox{
-            border: 1px solid black;
-            border-radius: 10px;
-            padding: 5px;
-        }
-        .test{
-            color: bisque;
-        }
-        .profileIcon{
-            padding-left: 10px;
-        }
-        .cartIcon{
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        @media only screen and (min-width: 1170px){
-            .navbarButton {
-                width: 100px;
-            }
-        }
-        @media only screen and (max-width: 1169px) and (min-width: 970px){
-            .navbarButton {
-                width: 85px;
-            }
-        }
-        @media only screen and (max-width: 969px) and (min-width: 750px){
-            .navbarButton {
-                width: 75px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -61,7 +16,7 @@
             <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                      <a class="navbar-brand col-4" href="index.php">Logo strony</a>
+                      <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
                       <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                       <div class="profileIcon">
                         <a class="nav-link col-1" href="../php/profile.php"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>

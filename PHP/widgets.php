@@ -23,10 +23,10 @@ class ClassicWidget implements Widget
     public function __construct($data)
     {
         return print('<div class="col-3 discInfoBox">
-                <img src="../images/FILMS/'. $data["image"] .'">
-                <p>'. $data["title"] .'</p>
-                <p>Cena</p><p>'. $data["price"] .'</p>
-                <button type="submit">DO KOSZYKA</button><br>
+                <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
+                <q class="movieTitle">'. $data["title"] .'</q>
+                <p class="moviePriceName">Cena: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
+                <button type="submit">DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
     }
@@ -37,10 +37,10 @@ class DiscountedWidget implements Widget
     public function __construct($data, $discount = 0)
     {
         return print('<div class="col-3 discInfoBox">
-                <img src="../images/FILMS/'. $data["image"] .'">
-                <p>'. $data["title"] .'</p>
-                <p>Cena</p><s>'. $data["price"] .'</s><p>'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
-                <button type="submit">DO KOSZYKA</button><br>
+                <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
+                <q class="movieTitle">'. $data["title"] .'</q>
+                <p class="moviePriceName">Cena: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
+                <button type="submit">DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
     }

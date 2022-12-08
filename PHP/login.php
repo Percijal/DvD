@@ -8,6 +8,21 @@ if($ready){
     $login = $_GET["login"];
     $pass = $_GET["password"];
 }
+
+if($ready){
+    for ($i=0; $i < count($rows); $i++) {
+        if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"]){
+            $_SESSION["UserId"] = $rows[$i]["id"];
+            $_SESSION["isAdmin"] = $rows[$i]["is_admin"];
+            //header("Location: /php/index.php");
+            header("Location: index.php");
+            exit();
+            return;
+        }
+    }
+        $_POST = array();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -18,35 +33,8 @@ if($ready){
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-            
-        }
-        /* .container-flow{
-            
-        }*/
-        .button{
-            padding: 5px;
-            margin: 5px;
-            width: 65px;
-            border-radius: 25px;
-            box-shadow: 7px 5px 5px gold;
-            font-style: italic;
-        }
-        label{
-            font-style: italic;
-        }
-        a{
-            font-style: italic;
-            text-decoration: none;
-            color: gold;
-        }
-        a:hover{
-            color:orangered
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/pageStyles.css">
+    
 </head>
 <body style="background-color: beige;">
     <div class="container-flow">
@@ -71,9 +59,23 @@ if($ready){
                     </div>
                 </div>
 
+                <div class="row" id="errorDiv" <?php if ($ready) { echo ""; } else {echo "hidden";}?>>
+                    <div div class="col-12" style="text-align: center;">
+                        <ul id="info" style="color: Darkred; text-decoration: none; letter-spacing: 1.5px; list-style: none;">
+                            <?php
+                                if($ready){
+                                    ?>
+                                        <li><b><i>Złe dane</i></b></li>
+                                    <?php
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="row justify-content-sm-center">
                     <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" value="Log in" class="button">
+                        <input type="submit" value="Log in" class="loginButton">
                     </div>
                 </div>
                 
@@ -95,21 +97,6 @@ if($ready){
 </body>
 </html>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<?php
-    if($ready){
-        for ($i=0; $i < count($rows); $i++) {
-            if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"]){
-                $_SESSION["UserId"] = $rows[$i]["id"];
-                $_SESSION["isAdmin"] = $rows[$i]["is_admin"];
-                header("Location: /php/index.php");
-                exit();
-            }
-            else{
-                print("ZŁE DANE");
-                $_POST = array();
-            }
-        }
-    }
-?>

@@ -13,36 +13,36 @@ function validateForm() {
     info.innerHTML = "";
 
     if (!email.includes("@")) {
-        info.innerHTML += "<li>Invalid E-mail</li>";
+        info.innerHTML += "<li><b><i>Invalid E-mail</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
     if (login.trim() == "") {
-        info.innerHTML += "<li>Invalid login</li>";
+        info.innerHTML += "<li><b><i>Invalid login</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
     if (name.trim() == "") {
-        info.innerHTML += "<li>Invalid name</li>";
+        info.innerHTML += "<li><b><i>Invalid name</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
     if (surname.trim() == "") {
-        info.innerHTML += "<li>Invalid surname</li>";
+        info.innerHTML += "<li><b><i>Invalid surname</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
     if (pass.trim() == "") {
-        info.innerHTML += "<li>Invalid password/li>";
+        info.innerHTML += "<li><b><i>Invalid password</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
     if (pass != repeatedPass) {
-        info.innerHTML += "<li>Miss matching passwords</li>";
+        info.innerHTML += "<li><b><i>Miss matching passwords</i></b></li>";
         error.removeAttribute("hidden");
         ifError = false;
     }
 
     return ifError
-    // console.log(pass);
+    console.log(pass);
 }

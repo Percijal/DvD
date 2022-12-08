@@ -47,37 +47,14 @@ if($ready){
     <title>Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-        }
-        .button{
-            padding: 5px;
-            margin: 5px;
-            width: 65px;
-            border-radius: 25px;
-            box-shadow: 7px 5px 5px gold;
-            font-style: italic;
-        }
-        label{
-            font-style: italic;
-        }
-        a{
-            font-style: italic;
-            text-decoration: none;
-            color: gold;
-        }
-        a:hover{
-            color:orangered
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/pageStyles.css">
+
 </head>
 <body style="background-color: beige;">
     <div class="container-flow">
         <fieldset style="background-color: gray; margin: 17%; padding: 20px; border-radius: 50px;">
             <legend style="text-align: center; font-style: italic; font-weight: bold;">Registration</legend>
-            <form action="registration.php" method="post">
+            <form action="registration.php" method="post" name="registration" onsubmit="return validateForm()">
                 <div class="row">
                     <div class="col-6" style="text-align: right;">
                         <label>E-mail: </label>
@@ -132,9 +109,15 @@ if($ready){
                     </div>
                 </div>
 
+                <div class="row" id="errorDiv" hidden>
+                    <div div class="col-12" style="text-align: center;">
+                        <ul id="info" style="color: Darkred; text-decoration: none; letter-spacing: 1.5px; list-style: none;"></ul>
+                    </div>
+                </div>
+
                 <div class="row justify-content-sm-center">
                     <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                        <input type="submit" value="Register" class="button">
+                        <input type="submit" value="Register" class="registerButton">
                     </div>
                 </div>
                 

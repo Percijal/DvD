@@ -1,0 +1,186 @@
+/*=================== */
+/* All pages */
+
+*{
+    padding: 0px;
+    margin: 0px;        
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+.container-fluid{
+    background-color: gray;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.footer{
+    background-color: bisque;
+}
+.top{
+    background-color: bisque;
+}
+.profileIcon{
+    padding-left: 10px;
+}
+.cartIcon{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+a{
+    font-style: italic;
+    text-decoration: none;
+    color: gold;
+}
+a:hover{
+    color:orangered
+}
+hr{
+    border: 1px solid black;
+}
+ul{
+    padding: 0px;
+}
+.test{
+    color: bisque;
+}
+.profileIcon{
+    padding-left: 10px;
+}
+.cartIcon{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+label{
+    font-style: italic;
+}
+
+/*=================== */
+/* UserBase page */
+
+.users{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/*=================== */
+/* Index/Main page */
+
+.discInfoBox{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+.discInfoBox > button{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+.discInfoBox > button:hover{ 
+    box-shadow: 7px 5px 5px darkred;
+    font-weight: bold;
+}
+.movieTitle{
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+.moviePriceName{
+    font-size: 19px;
+}
+.moviePrice{
+    font-size: 19px;
+}
+.movieOficialPrice{
+    font-size: 19px;
+    font-weight: bold;
+}
+.movieImage{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+}
+.movieImage:hover{
+    box-shadow: 7px 5px 5px darkred;
+}
+
+/*=================== */
+/* Cart page */
+
+
+
+/*=================== */
+/* Login page */
+
+.loginButton{
+    padding: 5px;
+    margin: 5px;
+    width: 65px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+
+/*=================== */
+/* Registration page */
+
+.registerButton{
+    padding: 5px;
+    margin: 5px;
+    width: 80px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+
+
+/*=================== */
+/* Profile page */
+
+.test{
+    color: bisque;
+}
+.profileIcon{
+    padding-left: 10px;
+}
+.cartIcon{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.FromUPaBit{
+    padding-top: 20px;
+}
+.UsersInfo{
+    border-left: 1px solid black;
+    padding-top: 15px;
+    text-align: left;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+/*=================== */
+/* Media */
+
+@media only screen and (min-width: 1170px){
+    .navbarButton {
+        width: 100px;
+    }
+}
+@media only screen and (max-width: 1169px) and (min-width: 970px){
+    .navbarButton {
+        width: 85px;
+    }
+}
+@media only screen and (max-width: 969px) and (min-width: 750px){
+    .navbarButton {
+        width: 75px;
+    }
+}
+
+/*=================== */
