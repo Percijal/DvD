@@ -1,3 +1,12 @@
+<?php
+session_start();
+require("widgets.php");
+require("db_connect.php");
+
+$logged = isset($_SESSION["UserId"]); //boolean
+if ($logged)
+    $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,59 +22,94 @@
 <body>
 
         <div class="container-fluid">
-            <div class="top" style="background-color: gray">
+        <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                      <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
-                      <div class="col-sm-3 col-md-4 col-lg-5"></div> 
-                      <div class="profileIcon">
-                        <a class="nav-link col-1" href="../php/profile.php"><img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px"></a>
-                      </div>
-                      <div class="cartIcon">
-                        <a class="nav-link col-1" href="../php/cart.php"><img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px"></a>
-                      </div>
-                      <div class="col-1">
-                        <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                      </div>
-                      <div class="collapse navbar-collapse" id="navbarScroll">
-                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.php">Home</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="profile.php">Profile</a>
-							</li>
-							<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								More
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="cart.php">Cart</a></li>
-								<li><a class="dropdown-item" href="contact.php">Contact</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="logOut.php">Log out</a></li> <!-- niszczenie sesji i wylogowanie użytkownika -->
-							</ul>
-							</li>
+                        <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
+                        <div class="col-sm-3 col-md-4 col-lg-5"></div> 
+                        <div class="profileIcon">
+                            <a class="nav-link col-1" href="
+                            <?php //sPHP
+                            if ($logged) {
+                            echo "profile.php";
+                            }
+                            else{
+                            echo "login.php";
+                            }
+                            //ePHP ?>
+                            ">
+                                <img src="../images/PageIcons/user.png" alt="user.png" width="50px" height="50px">
+                            </a>
+                        </div>
+                        <div class="cartIcon" >
+                            <a class="nav-link col-1" href="
+                            <?php //sPHP
+                            if ($logged) {
+                            echo "cart.php";
+                            }
+                            else{
+                            echo "registration.php";
+                            }
+                            //ePHP ?>
+                            ">
+                                <img src="../images/PageIcons/cart.png" alt="cart.png" width="50px" height="50px">
+                            </a>
+                        </div>
+                        <div class="col-1">
+                            <button class="navbar-toggler navbarButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="profile.php">Profile</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        More
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="cart.php">Cart</a></li>
+                                        <li><a class="dropdown-item" href="contact.php">Contact</a></li>
+                                        <li><hr class="dropdown-divider"></li>
 
-							<!-- W poniższym elemencie[a] trzeba ogarnąć klasę disabled w przypadku zalogowanego użytkownika/ NIE admina -->
-							<li class="nav-item">
-                                <a class="nav-link" href="../admin/UserBase.php">Admin Settings</a>
-							</li>
+                                        <!-- sPHP -->
+                                        <?php
+                                        if($logged)
+                                            echo "
+                                                <li><a class='dropdown-item' href='logOut.php'>Log out</a></li>"; //niszczenie sesji i wylogowanie użytkownika
+                                        else
+                                            echo "
+                                                <li><a class='dropdown-item' href='login.php'>Log in</a></li>";
+                                        ?>
+                                        <!-- ePHP -->
 
-                        </ul>
-                        <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                      </div>
+                                    </ul>
+                                </li>
+
+                                <!-- sPHP -->
+                                <?php
+                                if($logged && $isAdmin)
+                                    echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='../admin/UserBase.php'>Admin Settings</a>
+                                    </li>"
+                                ?>
+                                <!-- ePHP -->
+
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
                     </div>
-                    
-                  </nav>
-              </div>
-        
-        
+                </nav>
+            </div>
             <div class="main" style="display: block;">
                 
 

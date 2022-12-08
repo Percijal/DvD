@@ -4,7 +4,8 @@ require("widgets.php");
 require("db_connect.php");
 
 $logged = isset($_SESSION["UserId"]); //boolean
-$isAdmin = isset($_SESSION["isAdmin"]); //boolean
+if ($logged)
+    $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
 
 $sql = new SqlLiteQueryBuilder();
 $query = $pdo -> query($sql ->select("DVDs", ["*"])
@@ -83,8 +84,11 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                         <!-- sPHP -->
                                         <?php
                                         if($logged)
-                                        echo "
-                                                <li><a class='dropdown-item' href='logOut.php'>Log out</a></li>" //niszczenie sesji i wylogowanie użytkownika
+                                            echo "
+                                                <li><a class='dropdown-item' href='logOut.php'>Log out</a></li>"; //niszczenie sesji i wylogowanie użytkownika
+                                        else
+                                            echo "
+                                                <li><a class='dropdown-item' href='login.php'>Log in</a></li>";
                                         ?>
                                         <!-- ePHP -->
 
@@ -93,7 +97,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                                 <!-- sPHP -->
                                 <?php
-                                if($isAdmin)
+                                if($logged && $isAdmin)
                                     echo "
                                     <li class='nav-item'>
                                         <a class='nav-link' href='../admin/UserBase.php'>Admin Settings</a>
