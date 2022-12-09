@@ -26,7 +26,7 @@ class ClassicWidget implements Widget
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
                 <q class="movieTitle">'. $data["title"] .'</q>
                 <p class="moviePriceName">Cena: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
-                <button type="submit">DO KOSZYKA</button><br><br>
+                <button>DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
     }
@@ -40,7 +40,7 @@ class DiscountedWidget implements Widget
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
                 <q class="movieTitle">'. $data["title"] .'</q>
                 <p class="moviePriceName">Cena: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
-                <button type="submit">DO KOSZYKA</button><br><br>
+                <button>DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
     }
