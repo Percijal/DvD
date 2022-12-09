@@ -21,7 +21,7 @@ if ($logged)
 </head>
 <body>
 
-        <div class="container-fluid">
+    <div class="container-fluid">
         <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
@@ -70,9 +70,9 @@ if ($logged)
                                     <!-- sPHP -->
                                     <?php
                                         if($logged)
-                                            echo "<a class='nav-link' href='profile.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='profile.php'>Profile</a>";
                                         else
-                                            echo "<a class='nav-link' href='login.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='login.php'>Profile</a>";
                                     ?>
                                     <!-- ePHP -->
 
@@ -120,9 +120,70 @@ if ($logged)
                     </div>
                 </nav>
             </div>
-            <div class="main" style="display: block;">
+            <div class="main" style="display: block; padding: 15px;">
 
-                more...
+                <div class="row">
+                    <div class="col cartTitle">
+                        Koszyk
+                    </div>
+                </div>
+                <div class="cartOfFilms">
+                    <!-- Start PHP --> 
+                        <div class="row" style="text-align: center;">
+                           
+                            
+                                <div class="col-2">
+                                    <!-- Id produktu w tabeli -->
+                                    id 
+                                </div>
+                                <div class="col-2">
+                                    <!-- Tytul Filmu  -->
+                                    Tytul
+                                </div>
+                                <div class="col-2">
+                                    <!-- Cena filmu -->
+                                    Cena
+                                </div>
+                                <div class="col-2">
+                                    <!-- Uzytkownik podaje ilosc miesiecy na ile wypozycza film -->
+                                    Czas trwania wypożyczenia
+                                </div>
+                                <div class="col-2">
+                                    <!-- Pole zlicza ile kasy wychodzi || Cena filmu * Czas trwania -->
+                                    Koszt
+                                </div>
+                                <div class="col-2">
+                                    <!-- Pole zlicza ile kasy wychodzi || Cena filmu * Czas trwania -->
+                                    <button class="">Usun film</button>
+                                </div>
+
+                        </div>
+                    <!-- END PHP -->
+
+                    <hr>
+                        
+                </div>
+                <hr>
+                <div class="row justify-content-end">
+                    <div class="col-2">
+                        Łączna Kwota: 
+                    </div>
+                    <div class="col-2">
+                        <!-- Start PHP -->
+                            <!-- Wypisujemy kwote do zaplacenia za wszystkie filmy łącznie -->
+                            ...
+                        <!-- END PHP -->
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-2">
+                        <button class="">Usun koszyk</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="">Zaplac</button>
+                    </div>
+                </div>
+            </div>
 
             <!-- ====================================================================== -->
         
@@ -136,6 +197,7 @@ if ($logged)
                       </div>
                 </div>
             </div>
+        </div>
     </div>
     
 </body>
