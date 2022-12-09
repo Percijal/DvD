@@ -74,9 +74,9 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <!-- sPHP -->
                                     <?php
                                         if($logged)
-                                            echo "<a class='nav-link' href='profile.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='profile.php'>Profile</a>";
                                         else
-                                            echo "<a class='nav-link' href='login.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='login.php'>Profile</a>";
                                     ?>
                                     <!-- ePHP -->
 
@@ -152,23 +152,40 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                 [ Poniżej Info o płycie będzie (div + info z bazy) * n ]
                             </div>
                         </div>
-                    </div><br>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
                     <div class="row justify-content-around" style="text-align: center;">
                         
                         <!-- sPHP -->
                         <?php
-                            for ($i=0; $i < 4; $i++) { 
+                            for ($i=0; $i < 5; $i++) { 
                                 StaticFactory::factory('discounted', $rows[$i], 20);
                             }
                         ?>
                         <!-- ePHP -->
 
                     </div>
-                    <div class="row" style="text-align: center;">
+                    <br>
+                    <hr>
+                    <div class="row justify-content-around">
+                        <div class="col-4 ArrowButtonLeft">
+                            
+                        </div>
+                        <div class="col-4">
+                            
+                        </div>
+                        <div class="col-4 ArrowButtonRight">
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-around" style="text-align: center;">
                         
                         <!-- sPHP -->
                         <?php
-                            for ($i=0; $i < 4; $i++) { 
+                            for ($i=0; $i < 5; $i++) { 
                                 StaticFactory::factory('classic', $rows[$i]);
                             }
                         ?>

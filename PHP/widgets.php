@@ -22,7 +22,7 @@ class ClassicWidget implements Widget
 {
     public function __construct($data)
     {
-        return print('<div class="col-3 discInfoBox">
+        return print('<div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
                 <p class="moviePriceName">Cena: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
