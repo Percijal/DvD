@@ -108,6 +108,23 @@ label{
 .movieImage:hover{
     box-shadow: 7px 5px 5px darkred;
 }
+.arrowButtonLeft{
+    text-align: left;
+    padding: 20px;
+    margin-left: 20px;
+}
+.arrowButtonRight{
+    text-align: right;
+    padding: 20px;
+    margin-right: 20px;
+}
+.normalMovieInfo{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 20px;
+}
 
 /*=================== */
 /* Cart page */

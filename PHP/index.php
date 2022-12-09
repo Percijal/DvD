@@ -155,6 +155,21 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <br>
                     <hr>
+                    <div class="row justify-content-around">
+                        <div class="col-4 arrowButtonLeft">
+                            <a class="" href="">
+                                <img src="../images/PageIcons/ArrowLeft.png" alt="ArrowLeft.png" width="50px" height="50px">
+                            </a>
+                        </div>
+                        <div class="col-3 normalMovieInfo">
+                            Przecenione filmy:
+                        </div>
+                        <div class="col-4 arrowButtonRight">
+                            <a class="" href="">
+                                <img src="../images/PageIcons/ArrowRight.png" alt="ArrowRight.png" width="50px" height="50px">
+                            </a>
+                        </div>
+                    </div>
                     <br>
                     <div class="row justify-content-around" style="text-align: center;">
                         
@@ -170,14 +185,18 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     <br>
                     <hr>
                     <div class="row justify-content-around">
-                        <div class="col-4 ArrowButtonLeft">
-                            
+                        <div class="col-4 arrowButtonLeft">
+                            <a class="" href="">
+                                <img src="../images/PageIcons/ArrowLeft.png" alt="ArrowLeft.png" width="50px" height="50px">
+                            </a>
                         </div>
-                        <div class="col-4">
-                            
+                        <div class="col-3 normalMovieInfo">
+                            Nowe kultowe filmy:
                         </div>
-                        <div class="col-4 ArrowButtonRight">
-                            
+                        <div class="col-4 arrowButtonRight">
+                            <a class="" href="">
+                                <img src="../images/PageIcons/ArrowRight.png" alt="ArrowRight.png" width="50px" height="50px">
+                            </a>
                         </div>
                     </div>
                     <br>
@@ -192,12 +211,16 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         <!-- ePHP -->
 
                     </div>
-                    </div><br>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
                     <div class="row">
                         <div class="col" style="text-align: center;">
                             <q style="color:white;">If you're not a good shot today, don't worry. There are other ways to be useful.</q>
                         </div>
                     </div>
+                    <br>
                 </div>
                 <!-- ====================================================================== -->
             </div>
