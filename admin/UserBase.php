@@ -124,9 +124,9 @@ if ($logged)
                             Informacje o stronie
                         </div>
                     </div><br>
-                    <div class="users">
+                    <div class="">
 
-                        <div class="row" style="text-align: center;">
+                        <!-- <div class="row" style="text-align: center;">
                            
                             <div class="col-1">
                                 id
@@ -146,34 +146,34 @@ if ($logged)
                             <div class="col-3">
                                 <a href="#">edit</a> || <a href="#">delete user</a>
                             </div>
-                        </div>
+                        </div> -->
                         <hr>
                         <div class="row">
                             <!-- Start PHP -->
                             <?php
+                            echo'<table>
+                                <tr>
+                                    <th class="iDColumn">id.</th>
+                                    <th class="imageColumn">email</th>
+                                    <th class="titleColumn">login</th>
+                                    <th class="termColumn">name</th>
+                                    <th class="termColumn">surname</th>
+                                    <th>edit || delete</th>
+                                </tr>
+                            ';
                             foreach ($rows as $row) {
                             echo'
-                                <div class="col-1">
-                                    '.$row['id'].'
-                                </div>
-                                <div class="col-2">
-                                    '.$row['email'].'
-                                </div>
-                                <div class="col-2">
-                                    '.$row['login'].'
-                                </div>
-                                
-                                <div class="col-2">
-                                    '.$row['name'].'
-                                </div>
-                                <div class="col-2">
-                                    '.$row['surname'].'
-                                </div>
-                                <div class="col-3">
-                                    <a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'">delete user</a>
-                                </div>
+                                <tr>
+                                    <td>'.$row['id'].'</td>
+                                    <td>'.$row['email'].'</td>
+                                    <td>'.$row['login'].'</td>
+                                    <td>'.$row['name'].'</td>
+                                    <td>'.$row['surname'].'</td>
+                                    <td><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'"delete user</a></td>
+                                </tr>
                             ';
                             }
+                            echo '</table>'
                             ?>
                             <!-- END PHP -->
                         </div>

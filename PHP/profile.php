@@ -151,6 +151,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                 <div class="row">
                     <div class="col profileMovieTitle">
                         <q>Twoje Wypożyczenia</q>
+
                     </div>
                 </div><br>
                     <div class="row">
@@ -164,25 +165,26 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                 }
                                 else{
                                     $i=1;
+                                    echo'<table>
+                                    <tr>
+                                        <th class="iDColumn">id.</th>
+                                        <th class="imageColumn">image</th>
+                                        <th class="titleColumn">tytul</th>
+                                        <th class="termColumn">Termin zwrotu</th>
+                                    </tr>';
                                     foreach ($rows as $row) {
-                                        echo"
-                                        <table>
+                                        echo'
                                             <tr>
-                                                <th>id.</th>
-                                                <th>image</th>
-                                                <th>tytul</th>
-                                                <th>Termin zwrotu</th>
-                                            </tr>
-                                            <tr>
-                                                <td>".$i."</td>
-                                                <td><img class='' src='../images/FILMS/". $row['image'] ."'></td>
-                                                <td>".$row['title']."</td>
+                                                <td>'.$i.".</td>
+                                                <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
+                                                <td><q>".$row['title']."</q></td>
                                                 <td>".$row['date_end']."</td>
                                             </tr>
-                                        </table>
                                         ";
                                         $i++;
                                     }
+                                    echo '</table><p></p>';
+
                                 }
 
                             ?>

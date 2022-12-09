@@ -85,7 +85,7 @@ label{
     font-weight: bold;
 }
 .movieTitle{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     font-style: italic;
 }
@@ -204,6 +204,12 @@ label{
 table, th, td {
     border: 1px solid black;
 }
+table{
+    border-collapse: collapse;
+    border-radius: 30px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 1px black; /* this draws the table border  */
+}
 .profileMovieTitle{
     text-align: center;
     color: white;
@@ -218,6 +224,18 @@ table, th, td {
 .lastText{
     padding-bottom: 15px;
 }
+.iDColumn{
+    width: 100px;
+}
+.imageColumn{
+    width: 600px ;
+}
+.titleColumn{
+    width: 200px ;
+}
+.termColumn{
+    width: 200px ;
+}
 
 /*==================================================== */
 /* Media */
@@ -229,6 +247,9 @@ table, th, td {
     .movieImage{
         width: 90%
     }
+    .tableMovieImage{
+        width: 80%
+    }
 }
 @media only screen and (max-width: 1169px) and (min-width: 970px){
     .navbarButton {
@@ -237,6 +258,9 @@ table, th, td {
     .movieImage{
         width: 65%
     }
+    .tableMovieImage{
+        width: 80%
+    }
 }
 @media only screen and (max-width: 969px) and (min-width: 750px){
     .navbarButton {
@@ -244,6 +268,9 @@ table, th, td {
     }
     .movieImage{
         width: 50%
+    }
+    .tableMovieImage{
+        width: 80%
     }
 }
 
