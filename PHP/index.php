@@ -52,7 +52,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             echo "cart.php";
                             }
                             else{
-                            echo "registration.php";
+                            echo "login.php";
                             }
                             //ePHP ?>
                             ">
@@ -153,7 +153,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div><br>
-                    <div class="row" style="text-align: center;">
+                    <div class="row justify-content-around" style="text-align: center;">
                         
                         <!-- sPHP -->
                         <?php
