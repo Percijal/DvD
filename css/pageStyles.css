@@ -1,4 +1,4 @@
-/*=================== */
+/*==================================================== */
 /* All pages */
 
 *{
@@ -56,7 +56,7 @@ label{
     font-style: italic;
 }
 
-/*=================== */
+/*==================================================== */
 /* UserBase page */
 
 .users{
@@ -65,7 +65,7 @@ label{
     padding: 5px;
 }
 
-/*=================== */
+/*==================================================== */
 /* Index/Main page */
 
 .discInfoBox{
@@ -118,6 +118,16 @@ label{
     padding: 20px;
     margin-right: 20px;
 }
+.arrowButtonRight > button{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+.arrowButtonLeft > button{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
 .normalMovieInfo{
     text-align: center;
     font-size: 30px;
@@ -126,12 +136,23 @@ label{
     padding: 20px;
 }
 
-/*=================== */
+
+/*==================================================== */
 /* Cart page */
 
+.cartTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+.cartOfFilms{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
 
-
-/*=================== */
+/*==================================================== */
 /* Login page */
 
 .loginButton{
@@ -143,7 +164,7 @@ label{
     font-style: italic;
 }
 
-/*=================== */
+/*==================================================== */
 /* Registration page */
 
 .registerButton{
@@ -156,7 +177,7 @@ label{
 }
 
 
-/*=================== */
+/*==================================================== */
 /* Profile page */
 
 .test{
@@ -181,7 +202,7 @@ table, th, td {
     border: 1px solid black;
 }
 
-/*=================== */
+/*==================================================== */
 /* Media */
 
 @media only screen and (min-width: 1170px){
@@ -209,4 +230,4 @@ table, th, td {
     }
 }
 
-/*=================== */
+/*==================================================== */

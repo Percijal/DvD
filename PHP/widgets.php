@@ -25,7 +25,7 @@ class ClassicWidget implements Widget
         return print('<div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
-                <p class="moviePriceName">Cena: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
+                <p class="moviePriceName">Cena / per. Month: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
                 <button>DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
@@ -39,7 +39,7 @@ class DiscountedWidget implements Widget
         return print('<div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
-                <p class="moviePriceName">Cena: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
+                <p class="moviePriceName">Cena / per. Month: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
                 <button>DO KOSZYKA</button><br><br>
                 <a href="DanePłyta">Wincej informacji</a>
                 </div>');
