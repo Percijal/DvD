@@ -6,6 +6,8 @@
     {
         public function select(string $table, array $fields): SQLQueryBuilder;
 
+        public function delete(string $table): SQLQueryBuilder;
+
         public function insert(string $table, array $fields): SQLQueryBuilder;
 
         public function values(array $values): SQLQueryBuilder;
@@ -30,6 +32,15 @@
         {
             $this->reset();
             $this->query->base = "SELECT " . implode(", ", $fields) . " FROM " . $table;
+            $this->query->type = 'select';
+
+            return $this;
+        }
+
+        public function delete(string $table): SQLQueryBuilder
+        {
+            $this->reset();
+            $this->query->base = "DELETE FROM " . $table;
             $this->query->type = 'select';
 
             return $this;

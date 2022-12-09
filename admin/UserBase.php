@@ -1,11 +1,11 @@
 <?php
 session_start();
-require("widgets.php");
-require("db_connect.php");
+require("../php/db_connect.php");
 
 $logged = isset($_SESSION["UserId"]); //boolean
 if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -128,34 +128,54 @@ if ($logged)
 
                         <div class="row" style="text-align: center;">
                            
-                            <!-- Start PHP -->
-                                <div class="col-2">
-                                    <!-- Users e-mail -->
-                                    email
-                                </div>
-                                <div class="col-2">
-                                    <!-- Users login  -->
-                                    login
-                                </div>
-                                <div class="col-2">
-                                    <!-- Users name -->
-                                    name
-                                </div>
-                                <div class="col-2">
-                                    <!-- Users surename -->
-                                    surname
-                                </div>
-                                <div class="col-4">
-                                    <!-- Edit user -->
-                                    <!-- Delete user -->
-                                    <a href="#">edit</a> || <a href="#">delete user</a>
-                                </div>
-                            <!-- END PHP -->
-
+                            <div class="col-1">
+                                id
+                            </div>
+                            <div class="col-2">
+                                email
+                            </div>
+                            <div class="col-2">
+                                login
+                            </div>
+                            <div class="col-2">
+                                name
+                            </div>
+                            <div class="col-2">
+                                surname
+                            </div>
+                            <div class="col-3">
+                                <a href="#">edit</a> || <a href="#">delete user</a>
+                            </div>
                         </div>
                         <hr>
                         <div class="row">
-
+                            <!-- Start PHP -->
+                            <?php
+                            foreach ($rows as $row) {
+                            echo'
+                                <div class="col-1">
+                                    '.$row['id'].'
+                                </div>
+                                <div class="col-2">
+                                    '.$row['email'].'
+                                </div>
+                                <div class="col-2">
+                                    '.$row['login'].'
+                                </div>
+                                
+                                <div class="col-2">
+                                    '.$row['name'].'
+                                </div>
+                                <div class="col-2">
+                                    '.$row['surname'].'
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'">delete user</a>
+                                </div>
+                            ';
+                            }
+                            ?>
+                            <!-- END PHP -->
                         </div>
                     </div><br>
                     <div class="row">
