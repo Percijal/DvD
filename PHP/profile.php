@@ -8,10 +8,12 @@ if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
 
 $sql = new SqlLiteQueryBuilder();
-$query = $pdo -> query($sql ->select("Orders", ["*"])
-              -> where("id_user", "=", $_SESSION["UserId"])
-              -> getSQL());
+$query = $pdo -> query($sql ->select('Orders', ['*'])
+              -> join('Orders', 'DVDs', 'id_dvd', 'id')
+              -> where('id_user', $_SESSION["UserId"])
+              -> getSQL() );
 $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
+//print_r($rows)
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -76,9 +78,9 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <!-- sPHP -->
                                     <?php
                                         if($logged)
-                                            echo "<a class='nav-link' href='profile.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='profile.php'>Profile</a>";
                                         else
-                                            echo "<a class='nav-link' href='login.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='login.php'>Profile</a>";
                                     ?>
                                     <!-- ePHP -->
 
@@ -135,9 +137,14 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         
                     </div>
                     <div class="col UsersInfo">
-                        <p style="color:white;">User ID: ...</p>
-                        <p style="color:white;">name: ...</p>
-                        <p style="color:white;">Surname: ...</p>
+
+                    <!-- sPHP -->
+                    <?php
+                        echo '<p style="color:white;">User ID: '.$_SESSION["UserId"].'</p>';
+                        echo '<p style="color:white;">Name: '.$_SESSION["Name"].'</p>';
+                        echo '<p style="color:white;">Surname: '.$_SESSION["Surname"].'</p>';
+                        echo '<a href="./logOut.php">Log out</a>'
+                    ?>
                     </div>
                 </div>
                 <hr style="border: 1px solid black;">
@@ -146,36 +153,40 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         <q style="color:white;">Twoje Wypożyczenia</q>
                     </div>
                 </div><br>
-
-                <?php
-                    if(!$rows){
-                        echo "<q>To co?</q>
-                            <q>Pora coś kupić :3</q>"
-                    }
-
-                ?>
-
                 <div style="text-align: center; position: relative; margin-left: 45.34%;">
-                    <table>
-                        <tr>
-                            <th>id.</th>
-                            <th>image</th>
-                            <th>tytul</th>
-                            <th>Termin zwrotu</th>
-                        </tr>
-                        <tr>
-                            <td>1. </td>
-                            <td><img src="" alt="Photo"></td>
-                            <td>tytul</td>
-                            <td>Termin zwrotu (data)</td>
-                        </tr>
-                        <tr>
-                            <td><!-- id filmu --></td>
-                            <td><!-- miniaturka filmu --></td>
-                            <td><!-- dane --></td>
-                            <td><!-- data zwrotu --></td>
-                        </tr>
-                    </table>
+                
+                    <!-- sPHP -->
+                    <?php
+                        if(!isset($rows[0])){
+                            echo "<q>To co?</q>
+                                <q>Pora coś kupić :3</q>";
+                        }
+                        else{
+                            $i=1;
+                            foreach ($rows as $row) {
+                                echo"
+                                <table>
+                                    <tr>
+                                        <th>id.</th>
+                                        <th>image</th>
+                                        <th>tytul</th>
+                                        <th>Termin zwrotu</th>
+                                    </tr>
+                                    <tr>
+                                        <td>".$i."</td>
+                                        <td><img class='' src='../images/FILMS/". $row['image'] ."'></td>
+                                        <td>".$row['title']."</td>
+                                        <td>".$row['date_end']."</td>
+                                    </tr>
+                                </table>
+                                ";
+                                $i++;
+                            }
+                        }
+
+                    ?>
+                    <!-- ePHP -->
+                    
                 </div>
             </div>
 

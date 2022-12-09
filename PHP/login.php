@@ -14,6 +14,8 @@ if($ready){
         if($login == $rows[$i]["login"] && $pass == $rows[$i]["password"]){
             $_SESSION["UserId"] = $rows[$i]["id"];
             $_SESSION["isAdmin"] = $rows[$i]["is_admin"];
+            $_SESSION["Name"] = $rows[$i]["name"];
+            $_SESSION["Surname"] = $rows[$i]["surname"];
             //header("Location: /php/index.php");
             header("Location: index.php");
             exit();
