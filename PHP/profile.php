@@ -140,54 +140,58 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                     <!-- sPHP -->
                     <?php
-                        echo '<p style="color:white;">User ID: '.$_SESSION["UserId"].'</p>';
-                        echo '<p style="color:white;">Name: '.$_SESSION["Name"].'</p>';
-                        echo '<p style="color:white;">Surname: '.$_SESSION["Surname"].'</p>';
+                        // echo '<p><b>User ID:</b> <i>'.$_SESSION["UserId"].'</i></p>';
+                        echo '<p><b>Name:</b> <i>'.$_SESSION["Name"].'</i></p>';
+                        echo '<p><b>Surname:</b> <i>'.$_SESSION["Surname"].'</i></p>';
                         echo '<a href="./logOut.php">Log out</a>'
                     ?>
                     </div>
                 </div>
                 <hr style="border: 1px solid black;">
                 <div class="row">
-                    <div class="col" style="text-align: center;">
-                        <q style="color:white;">Twoje Wypożyczenia</q>
+                    <div class="col profileMovieTitle">
+                        <q>Twoje Wypożyczenia</q>
                     </div>
                 </div><br>
-                <div style="text-align: center; position: relative; margin-left: 45.34%;">
-                
-                    <!-- sPHP -->
-                    <?php
-                        if(!isset($rows[0])){
-                            echo "<q>To co?</q>
-                                <q>Pora coś kupić :3</q>";
-                        }
-                        else{
-                            $i=1;
-                            foreach ($rows as $row) {
-                                echo"
-                                <table>
-                                    <tr>
-                                        <th>id.</th>
-                                        <th>image</th>
-                                        <th>tytul</th>
-                                        <th>Termin zwrotu</th>
-                                    </tr>
-                                    <tr>
-                                        <td>".$i."</td>
-                                        <td><img class='' src='../images/FILMS/". $row['image'] ."'></td>
-                                        <td>".$row['title']."</td>
-                                        <td>".$row['date_end']."</td>
-                                    </tr>
-                                </table>
-                                ";
-                                $i++;
-                            }
-                        }
+                    <div class="row">
+                        <div class="col-4 offset-4 profileMovieInfo">
+                            <!-- sPHP -->
+                            <?php
+                                if(!isset($rows[0])){
+                                    echo '<q>To co?</q><br>
+                                        <q class="lastText">Pora coś kupić :3</q><br>
+                                        <p></p>';
+                                }
+                                else{
+                                    $i=1;
+                                    foreach ($rows as $row) {
+                                        echo"
+                                        <table>
+                                            <tr>
+                                                <th>id.</th>
+                                                <th>image</th>
+                                                <th>tytul</th>
+                                                <th>Termin zwrotu</th>
+                                            </tr>
+                                            <tr>
+                                                <td>".$i."</td>
+                                                <td><img class='' src='../images/FILMS/". $row['image'] ."'></td>
+                                                <td>".$row['title']."</td>
+                                                <td>".$row['date_end']."</td>
+                                            </tr>
+                                        </table>
+                                        ";
+                                        $i++;
+                                    }
+                                }
 
-                    ?>
-                    <!-- ePHP -->
+                            ?>
+                            <!-- ePHP -->
+                        </div>
+                                
+                        
+                    </div>
                     
-                </div>
             </div>
 
             <!-- ====================================================================== -->

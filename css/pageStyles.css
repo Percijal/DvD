@@ -198,8 +198,25 @@ label{
     padding-top: 15px;
     text-align: left;
 }
+.UsersInfo > p{
+    color: white;
+}
 table, th, td {
     border: 1px solid black;
+}
+.profileMovieTitle{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+}
+.profileMovieInfo{
+    text-align: center;
+    color: white;
+}
+.lastText{
+    padding-bottom: 15px;
 }
 
 /*==================================================== */
