@@ -171,15 +171,24 @@ table, th, td {
     .navbarButton {
         width: 100px;
     }
+    .movieImage{
+        width: 90%
+    }
 }
 @media only screen and (max-width: 1169px) and (min-width: 970px){
     .navbarButton {
         width: 85px;
     }
+    .movieImage{
+        width: 65%
+    }
 }
 @media only screen and (max-width: 969px) and (min-width: 750px){
     .navbarButton {
         width: 75px;
+    }
+    .movieImage{
+        width: 50%
     }
 }
 
