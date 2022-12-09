@@ -6,6 +6,12 @@ require("db_connect.php");
 $logged = isset($_SESSION["UserId"]); //boolean
 if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
+
+$sql = new SqlLiteQueryBuilder();
+$query = $pdo -> query($sql ->select("Orders", ["*"])
+              -> where("id_user", "=", $_SESSION["UserId"])
+              -> getSQL());
+$rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -31,10 +37,10 @@ if ($logged)
                             <a class="nav-link col-1" href="
                             <?php //sPHP
                             if ($logged) {
-                            echo "profile.php";
+                                echo "profile.php";
                             }
                             else{
-                            echo "login.php";
+                                echo "login.php";
                             }
                             //ePHP ?>
                             ">
@@ -141,12 +147,14 @@ if ($logged)
                     </div>
                 </div><br>
 
-                    <!-- jeśli tabela jest pusta na stronie wyświetla się tekst poniżej -->
+                <?php
+                    if(!$rows){
+                        echo "<q>To co?</q>
+                            <q>Pora coś kupić :3</q>"
+                    }
 
-                    <!-- <q>To co?</q>
-                    <q>Pora coś kupić :3</q> -->
+                ?>
 
-                    <!-- jeśli uzytkownik ma cos wykupionego wyswietlimy to PHP'em w tabeli pod jego profilem -->
                 <div style="text-align: center; position: relative; margin-left: 45.34%;">
                     <table>
                         <tr>
