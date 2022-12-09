@@ -31,10 +31,10 @@ if ($logged)
                             <a class="nav-link col-1" href="
                             <?php //sPHP
                             if ($logged) {
-                            echo "profile.php";
+                            echo "../php/profile.php";
                             }
                             else{
-                            echo "login.php";
+                            echo "../php/login.php";
                             }
                             //ePHP ?>
                             ">
@@ -45,10 +45,10 @@ if ($logged)
                             <a class="nav-link col-1" href="
                             <?php //sPHP
                             if ($logged) {
-                            echo "cart.php";
+                            echo "../php/cart.php";
                             }
                             else{
-                            echo "registration.php";
+                            echo "../php/registration.php";
                             }
                             //ePHP ?>
                             ">
@@ -66,25 +66,25 @@ if ($logged)
                                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="profile.php">Profile</a>
+                                    <a class="nav-link" href="../php/profile.php">Profile</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         More
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="cart.php">Cart</a></li>
-                                        <li><a class="dropdown-item" href="contact.php">Contact</a></li>
+                                        <li><a class="dropdown-item" href="../php/cart.php">Cart</a></li>
+                                        <li><a class="dropdown-item" href="../php/contact.php">Contact</a></li>
                                         <li><hr class="dropdown-divider"></li>
 
                                         <!-- sPHP -->
                                         <?php
                                         if($logged)
                                             echo "
-                                                <li><a class='dropdown-item' href='logOut.php'>Log out</a></li>"; //niszczenie sesji i wylogowanie użytkownika
+                                                <li><a class='dropdown-item' href='../php/logOut.php'>Log out</a></li>"; //niszczenie sesji i wylogowanie użytkownika
                                         else
                                             echo "
-                                                <li><a class='dropdown-item' href='login.php'>Log in</a></li>";
+                                                <li><a class='dropdown-item' href='../php/login.php'>Log in</a></li>";
                                         ?>
                                         <!-- ePHP -->
 

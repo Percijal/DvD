@@ -70,9 +70,9 @@ if ($logged)
                                     <!-- sPHP -->
                                     <?php
                                         if($logged)
-                                            echo "<a class='nav-link' href='profile.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='profile.php'>Profile</a>";
                                         else
-                                            echo "<a class='nav-link' href='login.php'>Profile</a>"
+                                            echo "<a class='nav-link' href='login.php'>Profile</a>";
                                     ?>
                                     <!-- ePHP -->
                                     
