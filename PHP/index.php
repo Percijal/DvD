@@ -186,17 +186,17 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     <hr>
                     <div class="row justify-content-around">
                         <div class="col-4 arrowButtonLeft">
-                            <a class="" href="">
+                            <button class="">
                                 <img src="../images/PageIcons/ArrowLeft.png" alt="ArrowLeft.png" width="50px" height="50px">
-                            </a>
+                            </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
                             Nowe kultowe filmy:
                         </div>
                         <div class="col-4 arrowButtonRight">
-                            <a class="" href="">
+                            <button class="">
                                 <img src="../images/PageIcons/ArrowRight.png" alt="ArrowRight.png" width="50px" height="50px">
-                            </a>
+                            </buton>
                         </div>
                     </div>
                     <br>
