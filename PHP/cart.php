@@ -6,6 +6,13 @@ require("db_connect.php");
 $logged = isset($_SESSION["UserId"]); //boolean
 if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
+
+$sql = new SqlLiteQueryBuilder();
+$query = $pdo -> query($sql ->select('Cart', ['*'])
+              -> join('Cart', 'DVDs', 'id_dvd', 'id')
+              -> where('id_user', $_SESSION["UserId"])
+              -> getSQL() );
+$rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -137,25 +144,32 @@ if ($logged)
                                         <th class="th">id</th>
                                         <th class="th">Tytul</th>
                                         <th class="th">Cena</th>
-                                        <th class="th">Czas trwania wypożyczenia</th>
+                                        <th class="th">Czas trwania wypożyczenia(miesiace)</th>
                                         <th class="th">Koszt</th>
                                         <th class="th">Usun Film</th>
                                     </tr>
-                                    <tr>
-                                        <!-- Start PHP -->
-                                        <td class="td"></td>
-                                        <td class="td"></td>
-                                        <td class="td"></td>
-                                        <td class="td"></td>
-                                        <td class="td"></td>
+
+                                    <!-- sPHP -->
+                                    <?php
+                                    $i=1;
+                                    foreach ($rows as $row) {
+                                        echo '<tr>
+                                        <td class="td">'.$i.'.</td>
+                                        <td class="td">'.$row['title'].'</td>
+                                        <td class="td">'.round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
+                                        <td class="td">'.$row["number_of"].'</td>
+                                        <td class="td price">'.$row["number_of"] * round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
                                         <td class="td"><a href="#">Usun Film</a></td>
-                                        <!-- END PHP -->
-                                    </tr>
+                                        </tr>';
+                                        $i++;
+                                    }
+                                    ?>
+                                    <!-- ePHP -->
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
                                         <td class="td">Łączna Kwota:</td>
-                                        <td>   </td>
+                                        <td id="countCart"></td>
                                         <!-- END PHP -->
                                     </tr>
                                     <tr>
@@ -195,3 +209,4 @@ if ($logged)
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="../js/countCart.js"></script>
