@@ -167,7 +167,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     $i=1;
                                     echo'<table class="personalMovies">
                                     <tr>
-                                        <th class="iDColumn">id.</th>
+                                        <th class="iDColumn" style="padding: 5px">id.</th>
                                         <th class="imageColumn">image</th>
                                         <th class="titleColumn">tytul</th>
                                         <th class="termColumn">Termin zwrotu</th>
