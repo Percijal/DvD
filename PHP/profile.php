@@ -131,20 +131,57 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
             <div class="main" style="display: block;">
 
                 <div class="row FromUPaBit">
-                    <div class="col logoBanner">
-                        <!-- skrypt wybierający z bazy iconę profilu w zależności od takiej jaka jest przypisana do użytkownika.  -->
-                        <!-- z założenia użytkownik będzie mógł ją zmienić. Są one dodane do folderu images -->
-                        
+                    <div class="col d-flex flex-row-reverse">
+                        <!-- Start PHP -->
+
+                        <!-- ===> --> <img class="p-2 profilePicture" src="../images/ProfileIcons/profileIcon.png" alt="PprofileImage">
+
+                        <!-- END PHP -->
                     </div>
                     <div class="col UsersInfo">
 
                     <!-- sPHP -->
+
+                    <!-- *** -->
+                    <!-- W linijce nad 'log out' dałem pole wyboru. Użytkownik wybiera sobie jedną ikonę z pośród podanych i 
+                    zatwierdza przyciskiem. Po kliknięciu przycisku jakoś prześlesz dane do bazy i odświerzymy stronę aby pokazać
+                    użytkownikowi nowe zmiany w <img> powyżej . Wszystko jest w formularzu więc raczej bez większego problemu 
+                    podepniesz sobie PHP Rozwiązanie to zapobiegnie używaniu wyskakujących okien. 
+                    
+                    Trochę na hama i w prost ale raczej zadziała (I guess...) -->
+
                     <?php
                         // echo '<p><b>User ID:</b> <i>'.$_SESSION["UserId"].'</i></p>';
                         echo '<p><b>Name:</b> <i>'.$_SESSION["Name"].'</i></p>';
                         echo '<p><b>Surname:</b> <i>'.$_SESSION["Surname"].'</i></p>';
+                        echo '&nbsp';
+                        ?>
+                        <br>
+                        <form action="#">
+                            <?php
+                                echo '<p style="color: white;"><b>Current Profile image:</b> <i>'. /* miejsce wyświetlenia nazwy aktualnego zdjęcia */ '</i></p>';
+                                echo '<p style="color: white;"><b>Change ProfileImage:</b>'; ?>  
+                                <select name="image" id="image">
+                                    <option disabled>----------</option>
+                                    <option value="1">Image 1</option>
+                                    <option value="2">Image 2</option>
+                                    <option value="3">Image 3</option>
+                                    <option value="4">Image 4</option>
+                                    <option value="5">Image 5</option>
+                                    <option value="6">Image 6</option>
+                                    <option value="7">Image 7</option>
+                                    <option value="8">Image 8</option>
+
+                                    <option disabled>----------</option>
+                                </select>
+                                
+                            <?php echo' <input type="submit" value="Try it" class="checkItButon"></p>';
+                            ?>
+                        </form>
+                        <?php
                         echo '<a href="./logOut.php">Log out</a>'
                     ?>
+                    <!-- END PHP -->
                     </div>
                 </div>
                 <hr style="border: 1px solid black;">
@@ -154,45 +191,45 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                     </div>
                 </div><br>
-                    <div class="row">
-                        <div class="col-4 offset-4 profileMovieInfo">
-                            <!-- sPHP -->
-                            <?php
-                                if(!isset($rows[0])){
-                                    echo '<q>To co?</q><br>
-                                        <q class="lastText">Pora coś kupić :3</q><br>
-                                        <p></p>';
+                <div class="row">
+                    <div class="col-4 offset-4 profileMovieInfo">
+                        <!-- sPHP -->
+                        <?php
+                            if(!isset($rows[0])){
+                                echo '<q>To co?</q><br>
+                                    <q class="lastText">Pora coś kupić :3</q><br>
+                                    <p></p>';
+                            }
+                            else{
+                                $i=1;
+                                echo'<table class="personalMovies">
+                                <tr>
+                                    <th class="iDColumn" style="padding: 5px">id.</th>
+                                    <th class="imageColumn">image</th>
+                                    <th class="titleColumn">tytul</th>
+                                    <th class="termColumn">Termin zwrotu</th>
+                                </tr>';
+                                foreach ($rows as $row) {
+                                    echo'
+                                        <tr>
+                                            <td>'.$i.".</td>
+                                            <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
+                                            <td><q>".$row['title']."</q></td>
+                                            <td>".$row['date_end']."</td>
+                                        </tr>
+                                    ";
+                                    $i++;
                                 }
-                                else{
-                                    $i=1;
-                                    echo'<table class="personalMovies">
-                                    <tr>
-                                        <th class="iDColumn" style="padding: 5px">id.</th>
-                                        <th class="imageColumn">image</th>
-                                        <th class="titleColumn">tytul</th>
-                                        <th class="termColumn">Termin zwrotu</th>
-                                    </tr>';
-                                    foreach ($rows as $row) {
-                                        echo'
-                                            <tr>
-                                                <td>'.$i.".</td>
-                                                <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
-                                                <td><q>".$row['title']."</q></td>
-                                                <td>".$row['date_end']."</td>
-                                            </tr>
-                                        ";
-                                        $i++;
-                                    }
-                                    echo '</table><p></p>';
+                                echo '</table><p></p>';
 
-                                }
+                            }
 
-                            ?>
-                            <!-- ePHP -->
-                        </div>
-                                
-                        
+                        ?>
+                        <!-- ePHP -->
                     </div>
+                    <hr style="border: 1px solid black; margin-top: 10px;">      
+                    
+                </div>
                     
             </div>
 

@@ -282,6 +282,19 @@ label{
 .termColumn{
     width: 200px ;
 }
+.profilePicture{
+    width: 28%;
+}
+.checkItButon{
+    margin-left: 5px;
+    width: 75px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+.checkItButon:hover{
+    box-shadow: 7px 5px 5px darkred;
+}
 
 /*==================================================== */
 /* Media */
