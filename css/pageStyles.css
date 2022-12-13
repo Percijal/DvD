@@ -162,11 +162,11 @@ label{
     font-weight: bold;
     font-style: italic;
 }
-.cartOfFilms{
+/* .cartOfFilms{
     border: 1px solid black;
     border-radius: 10px;
     padding: 5px;
-}
+} */
 .clearTd{
     border: none;
     padding: 7px;
@@ -179,6 +179,9 @@ label{
     box-shadow: 7px 5px 5px gold;
     font-style: italic;
 }
+.cartClearButton:hover{
+    box-shadow: 7px 5px 5px darkred;
+}
 .cartPayButton{
     padding: 5px;
     margin: 5px;
@@ -186,6 +189,9 @@ label{
     border-radius: 25px;
     box-shadow: 7px 5px 5px gold;
     font-style: italic;
+}
+.cartPayButton:hover{
+    box-shadow: 7px 5px 5px darkred;
 }
 /* .cartClearButton > Button:hover{
     box-shadow: 7px 5px 5px darkred;

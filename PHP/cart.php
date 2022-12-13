@@ -168,14 +168,14 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td">Łączna Kwota:</td>
+                                        <td class="td"><b>Łączna Kwota:</b></td>
                                         <td id="countCart"></td>
                                         <!-- END PHP -->
                                     </tr>
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td cartClearButton"><button class="cartClearButton">Usun koszyk</button></td>
+                                        <td class="td"><button class="cartClearButton">Usun koszyk</button></td>
                                         <td><button class="cartPayButton">Zaplac</button></td>
                                         <!-- END PHP -->
                                     </tr>
