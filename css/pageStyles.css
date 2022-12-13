@@ -59,10 +59,26 @@ label{
 /*==================================================== */
 /* UserBase page */
 
-.users{
+.usersData{
     border: 1px solid black;
     border-radius: 10px;
-    padding: 5px;
+    border-collapse: collapse;
+    border-radius: 30px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 1px black; /* this draws the table border  */
+
+}
+
+.th{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+.td{
+    border: 1px solid black;
+    padding: 7px;
+    text-align: center;
+
 }
 
 /*==================================================== */
@@ -151,6 +167,36 @@ label{
     border-radius: 10px;
     padding: 5px;
 }
+.clearTd{
+    border: none;
+    padding: 7px;
+}
+.cartClearButton{
+    padding: 5px;
+    margin: 5px;
+    width: 100px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+.cartPayButton{
+    padding: 5px;
+    margin: 5px;
+    width: 100px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+/* .cartClearButton > Button:hover{
+    box-shadow: 7px 5px 5px darkred;
+    font-weight: bold;
+}
+.cartPayButton > Button:hover{
+    box-shadow: 7px 5px 5px darkred;
+    font-weight: bold;
+} */
+
+
 
 /*==================================================== */
 /* Login page */
@@ -201,10 +247,10 @@ label{
 .UsersInfo > p{
     color: white;
 }
-table, th, td {
+.personalMovies, th, td {
     border: 1px solid black;
 }
-table{
+.personalMovies{
     border-collapse: collapse;
     border-radius: 30px;
     border-style: hidden; /* hide standard table (collapsed) border */
@@ -248,7 +294,10 @@ table{
         width: 90%
     }
     .tableMovieImage{
-        width: 80%
+        width: 75%
+    }
+    .thLast, .tdLast{
+        width: 200px;
     }
 }
 @media only screen and (max-width: 1169px) and (min-width: 970px){
@@ -267,7 +316,7 @@ table{
         width: 75px;
     }
     .movieImage{
-        width: 50%
+        width: 55%
     }
     .tableMovieImage{
         width: 80%

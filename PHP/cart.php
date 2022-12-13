@@ -127,61 +127,51 @@ if ($logged)
                         Koszyk
                     </div>
                 </div>
-                <div class="cartOfFilms">
+                <hr style="margin-bottom: 25px">
+                <div class="">
                     <!-- Start PHP --> 
-                        <div class="row" style="text-align: center;">
-                           
-                            
-                                <div class="col-2">
-                                    <!-- Id produktu w tabeli -->
-                                    id 
-                                </div>
-                                <div class="col-2">
-                                    <!-- Tytul Filmu  -->
-                                    Tytul
-                                </div>
-                                <div class="col-2">
-                                    <!-- Cena filmu -->
-                                    Cena
-                                </div>
-                                <div class="col-2">
-                                    <!-- Uzytkownik podaje ilosc miesiecy na ile wypozycza film -->
-                                    Czas trwania wypożyczenia
-                                </div>
-                                <div class="col-2">
-                                    <!-- Pole zlicza ile kasy wychodzi || Cena filmu * Czas trwania -->
-                                    Koszt
-                                </div>
-                                <div class="col-2">
-                                    <!-- Pole zlicza ile kasy wychodzi || Cena filmu * Czas trwania -->
-                                    <button class="">Usun film</button>
-                                </div>
+                        <div class="row justify-content-center" style="text-align: center;">
+                            <div class="col-auto">
+                                <table class="table table-responsive">
+                                    <tr>
+                                        <th class="th">id</th>
+                                        <th class="th">Tytul</th>
+                                        <th class="th">Cena</th>
+                                        <th class="th">Czas trwania wypożyczenia</th>
+                                        <th class="th">Koszt</th>
+                                        <th class="th">Usun Film</th>
+                                    </tr>
+                                    <tr>
+                                        <!-- Start PHP -->
+                                        <td class="td"></td>
+                                        <td class="td"></td>
+                                        <td class="td"></td>
+                                        <td class="td"></td>
+                                        <td class="td"></td>
+                                        <td class="td"><a href="#">Usun Film</a></td>
+                                        <!-- END PHP -->
+                                    </tr>
+                                    <tr>
+                                        <!-- Start PHP -->
+                                        <td class="clearTd" colspan="3"></td>
+                                        <td class="td">Łączna Kwota:</td>
+                                        <td>   </td>
+                                        <!-- END PHP -->
+                                    </tr>
+                                    <tr>
+                                        <!-- Start PHP -->
+                                        <td class="clearTd" colspan="3"></td>
+                                        <td class="td cartClearButton"><button class="cartClearButton">Usun koszyk</button></td>
+                                        <td><button class="cartPayButton">Zaplac</button></td>
+                                        <!-- END PHP -->
+                                    </tr>
+                                </table>
+                            </div>
 
                         </div>
+                        <hr>
                     <!-- END PHP -->
 
-                    <hr>
-                        
-                </div>
-                <hr>
-                <div class="row justify-content-end">
-                    <div class="col-2">
-                        Łączna Kwota: 
-                    </div>
-                    <div class="col-2">
-                        <!-- Start PHP -->
-                            <!-- Wypisujemy kwote do zaplacenia za wszystkie filmy łącznie -->
-                            ...
-                        <!-- END PHP -->
-                    </div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="col-2">
-                        <button class="">Usun koszyk</button>
-                    </div>
-                    <div class="col-2">
-                        <button class="">Zaplac</button>
-                    </div>
                 </div>
             </div>
 

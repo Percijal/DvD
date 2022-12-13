@@ -148,35 +148,39 @@ if ($logged)
                             </div>
                         </div> -->
                         <hr>
-                        <div class="row">
-                            <!-- Start PHP -->
-                            <?php
-                            echo'<table>
-                                <tr>
-                                    <th class="iDColumn">id.</th>
-                                    <th class="imageColumn">email</th>
-                                    <th class="titleColumn">login</th>
-                                    <th class="termColumn">name</th>
-                                    <th class="termColumn">surname</th>
-                                    <th>edit || delete</th>
-                                </tr>
-                            ';
-                            foreach ($rows as $row) {
-                            echo'
-                                <tr>
-                                    <td>'.$row['id'].'</td>
-                                    <td>'.$row['email'].'</td>
-                                    <td>'.$row['login'].'</td>
-                                    <td>'.$row['name'].'</td>
-                                    <td>'.$row['surname'].'</td>
-                                    <td><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'"delete user</a></td>
-                                </tr>
-                            ';
-                            }
-                            echo '</table>'
-                            ?>
-                            <!-- END PHP -->
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <!-- Start PHP -->
+                                <?php
+                                echo'
+                                <table class="usersData table table-responsive"">
+                                    <tr>
+                                        <th class="th">id.</th>
+                                        <th class="th">email</th>
+                                        <th class="th">login</th>
+                                        <th class="th">name</th>
+                                        <th class="th">surname</th>
+                                        <th class="th thLast">edit || delete</th>
+                                    </tr>
+                                ';
+                                foreach ($rows as $row) {
+                                echo'
+                                    <tr>
+                                        <td class="td">'.$row['id'].'</td>
+                                        <td class="td">'.$row['email'].'</td>
+                                        <td class="td">'.$row['login'].'</td>
+                                        <td class="td">'.$row['name'].'</td>
+                                        <td class="td">'.$row['surname'].'</td>
+                                        <td class="td tdLast"><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
+                                    </tr>
+                                ';
+                                }
+                                echo '</table>'
+                                ?>
+                                <!-- END PHP -->
+                            </div>
                         </div>
+                        <hr>
                     </div><br>
                     <div class="row">
                         <div class="col" style="text-align: center;">
