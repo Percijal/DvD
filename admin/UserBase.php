@@ -169,7 +169,7 @@ if ($logged)
                                     <td>'.$row['login'].'</td>
                                     <td>'.$row['name'].'</td>
                                     <td>'.$row['surname'].'</td>
-                                    <td><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'"delete user</a></td>
+                                    <td><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
                                 </tr>
                             ';
                             }
