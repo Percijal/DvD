@@ -153,6 +153,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div>
+
                     <br>
                     <hr>
                     <div class="row justify-content-around">

@@ -146,9 +146,10 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     <!-- W linijce nad 'log out' dałem pole wyboru. Użytkownik wybiera sobie jedną ikonę z pośród podanych i 
                     zatwierdza przyciskiem. Po kliknięciu przycisku jakoś prześlesz dane do bazy i odświerzymy stronę aby pokazać
                     użytkownikowi nowe zmiany w <img> powyżej . Wszystko jest w formularzu więc raczej bez większego problemu 
-                    podepniesz sobie PHP Rozwiązanie to zapobiegnie używaniu wyskakujących okien. 
-                    
-                    Trochę na hama i w prost ale raczej zadziała (I guess...) -->
+                    podepniesz sobie PHP. Raczej zadziała (I guess...) 
+                
+                    Podobną rzecz zrobię w widgetach z wyświetlaniem na stronie głównej infa o płytach, ale będę potrzebował do nich
+                    infa z bazy przez JS w zależności jaki film jest wyświetlany. -->
 
                     <?php
                         // echo '<p><b>User ID:</b> <i>'.$_SESSION["UserId"].'</i></p>';
@@ -157,27 +158,84 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         echo '&nbsp';
                         ?>
                         <br>
-                        <form action="#">
-                            <?php
-                                echo '<p style="color: white;"><b>Current Profile image:</b> <i>'. /* miejsce wyświetlenia nazwy aktualnego zdjęcia */ '</i></p>';
-                                echo '<p style="color: white;"><b>Change ProfileImage:</b>'; ?>  
-                                <select name="image" id="image">
-                                    <option disabled>----------</option>
-                                    <option value="1">Image 1</option>
-                                    <option value="2">Image 2</option>
-                                    <option value="3">Image 3</option>
-                                    <option value="4">Image 4</option>
-                                    <option value="5">Image 5</option>
-                                    <option value="6">Image 6</option>
-                                    <option value="7">Image 7</option>
-                                    <option value="8">Image 8</option>
 
-                                    <option disabled>----------</option>
-                                </select>
-                                
-                            <?php echo' <input type="submit" value="Try it" class="checkItButon"></p>';
-                            ?>
-                        </form>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Profile images</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="profile.php">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture1" value="" aria-label="...">
+                                                <label for="radioPicture1">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon.png" alt="image1"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture2" value="" aria-label="...">
+                                                <label for="radioPicture2">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon2.png" alt="image2"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture3" value="" aria-label="...">
+                                                <label for="radioPicture3">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon3.png" alt="image3"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture4" value="" aria-label="...">
+                                                <label for="radioPicture4">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon4.png" alt="image4"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture5" value="" aria-label="...">
+                                                <label for="radioPicture5">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon5.png" alt="image5"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture6" value="" aria-label="...">
+                                                <label for="radioPicture6">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon6.png" alt="image6"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture7" value="" aria-label="...">
+                                                <label for="radioPicture7">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon7.png" alt="image7"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture8" value="" aria-label="...">
+                                                <label for="radioPicture8">
+                                                    <img class="selectProfilePicture" src="../images/ProfileIcons/profileIcon8.png" alt="image8"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <!-- on click func ===>> --><input type="submit" value="Try it" class="btn btn-warning" data-bs-dismiss="modal" onclick="">
+                                    </div>
+                                <form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="color: white;"><b>Change ProfileImage:</b>
+                        <button class="checkItButon" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Try it</button></p>
                         <?php
                         echo '<a href="./logOut.php">Log out</a>'
                     ?>
@@ -252,3 +310,8 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+    function okej(){
+        console.log("test");
+    }
+</script>
