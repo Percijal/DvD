@@ -63,7 +63,7 @@ if ($logged)
                         <div class="collapse navbar-collapse" id="navbarScroll">
                             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../php/profile.php">Profile</a>
@@ -115,38 +115,16 @@ if ($logged)
                 <!-- ====================================================================== -->
                 <div class="main" style="padding: 15px;">
                     <div class="row">
-                        <div class="col" style="text-align: center;">
-                            Admin => Users base.php (Nazwa Strony)
+                        <div class="col adminPageTitle">
+                            Panel administracji
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" style="text-align: center;">
-                            Informacje o stronie
+                            Zarządzanie użytkownikami
                         </div>
-                    </div><br>
-                    <div class="">
-
-                        <!-- <div class="row" style="text-align: center;">
-                           
-                            <div class="col-1">
-                                id
-                            </div>
-                            <div class="col-2">
-                                email
-                            </div>
-                            <div class="col-2">
-                                login
-                            </div>
-                            <div class="col-2">
-                                name
-                            </div>
-                            <div class="col-2">
-                                surname
-                            </div>
-                            <div class="col-3">
-                                <a href="#">edit</a> || <a href="#">delete user</a>
-                            </div>
-                        </div> -->
+                    </div>
+                    <div>
                         <hr>
                         <div class="row justify-content-center">
                             <div class="col-auto">
