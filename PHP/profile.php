@@ -40,7 +40,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
         <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                        <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
+                        <a class="navbar-brand col-4" href="../PHP/index.php"><img src="../images/logo2.png" alt="logo" width="50px" height="50px" style="margin-left: 20px;"></a>
                         <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                         <div class="profileIcon">
                             <a class="nav-link col-1" href="
@@ -151,16 +151,6 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                     <div class="col UsersInfo">
 
                     <!-- sPHP -->
-
-                    <!-- *** -->
-                    <!-- W linijce nad 'log out' dałem pole wyboru. Użytkownik wybiera sobie jedną ikonę z pośród podanych i 
-                    zatwierdza przyciskiem. Po kliknięciu przycisku jakoś prześlesz dane do bazy i odświerzymy stronę aby pokazać
-                    użytkownikowi nowe zmiany w <img> powyżej . Wszystko jest w formularzu więc raczej bez większego problemu 
-                    podepniesz sobie PHP. Raczej zadziała (I guess...) 
-                
-                    Podobną rzecz zrobię w widgetach z wyświetlaniem na stronie głównej infa o płytach, ale będę potrzebował do nich
-                    infa z bazy przez JS w zależności jaki film jest wyświetlany. -->
-
                     <?php
                         // echo '<p><b>User ID:</b> <i>'.$_SESSION["UserId"].'</i></p>';
                         echo '<p><b>Name:</b> <i>'.$_SESSION["Name"].'</i></p>';
@@ -299,8 +289,6 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                     
             </div>
 
-            <!-- ====================================================================== -->
-        
             <div class="footer sticky-bottom bg-gray opacity-100 w-100"  style="background-color: bisque;">
                 <div class="row">
                     <p class="col-3" style="padding-left: 25px;">Copyright ©️ 2022</p>
