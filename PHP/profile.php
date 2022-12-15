@@ -232,6 +232,27 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
 
+                        <!-- Modal -->
+                        <div class="modal fade" id="movieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="movieModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Player is currently unavailable...
+                                        <br>
+                                        <br>
+                                        We are very sorry about this.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <p style="color: white;"><b>Change Profile Image:</b>
                         <button class="checkItButon" onclick="pokaz()">Change it</button></p>
                         <?php
@@ -264,6 +285,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                     <th class="imageColumn">image</th>
                                     <th class="titleColumn">Title</th>
                                     <th class="termColumn">Renting Duration</th>
+                                    <th class="termColumn">Player online</th>
                                 </tr>';
                                 foreach ($rows as $row) {
                                     echo'
@@ -272,6 +294,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                             <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
                                             <td><q>".$row['title']."</q></td>
                                             <td>".$row['date_end']."</td>
+                                            <td><button class='checkItButon' onclick='pokazPlayer()'>Watch now</button></td>
                                         </tr>
                                     ";
                                     $i++;
@@ -311,7 +334,11 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
     const myModalAlternative = new bootstrap.Modal('#staticBackdrop')
+    const myModalAMoviePlayer = new bootstrap.Modal('#movieModal')
     function pokaz(){
         myModalAlternative.show();
+    }
+    function pokazPlayer(){
+        myModalAMoviePlayer.show();
     }
 </script>
