@@ -177,7 +177,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         
                         <!-- sPHP -->
                         <?php
-                            for ($i=0; $i < 5; $i++) { 
+                            for ($i=1; $i < 5; $i++) { 
                                 StaticFactory::factory('discounted', $rows[$i], 20);
                             }
                         ?>
@@ -206,7 +206,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         
                         <!-- sPHP -->
                         <?php
-                            for ($i=0; $i < 5; $i++) { 
+                            for ($i=4; $i >= 0; $i--) { 
                                 StaticFactory::factory('classic', $rows[$i]);
                             }
                         ?>

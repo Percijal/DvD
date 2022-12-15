@@ -13,7 +13,14 @@ $query = $pdo -> query($sql ->select('Orders', ['*'])
               -> where('id_user', $_SESSION["UserId"])
               -> getSQL() );
 $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
+
+$sql = new SqlLiteQueryBuilder();
+$query1 = $pdo -> query($sql ->select("Users", ["prof_image"])
+                            ->where("id", $_SESSION["UserId"])
+                            ->getSQL());
+$rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows)
+// print_r($rows1)
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -132,9 +139,14 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="row FromUPaBit">
                     <div class="col-6" align="right">
-
-                        <img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/profileIcon.png" alt="PprofileImage">
-
+                        <?php
+                        if($logged){
+                            if($rows1[0]["prof_image"] != "")
+                                echo '<img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/'.$rows1[0]["prof_image"].'" alt="ProfileImage">';
+                            else
+                                echo '<img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/ProfileImage.png" alt="ProfileImage">';
+                        }
+                        ?>
                     </div>
                     <div class="col UsersInfo">
 
@@ -170,28 +182,28 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture1" value="" aria-label="...">
                                                 <label for="radioPicture1">
-                                                    <img id="ID1" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon.png" alt="image1"  onclick="okej()">
+                                                    <img id="ID1" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon.png" alt="image1"   >
                                                 </label>
                                             </div>
 
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture2" value="" aria-label="...">
                                                 <label for="radioPicture2">
-                                                    <img id="ID2" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon2.png" alt="image2"  onclick="okej()">
+                                                    <img id="ID2" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon2.png" alt="image2"   >
                                                 </label>
                                             </div>
 
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture3" value="" aria-label="...">
                                                 <label for="radioPicture3">
-                                                    <img id="ID3" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon3.png" alt="image3"  onclick="okej()">
+                                                    <img id="ID3" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon3.png" alt="image3"   >
                                                 </label>
                                             </div>
 
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture4" value="" aria-label="...">
                                                 <label for="radioPicture4">
-                                                    <img id="ID4" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon4.png" alt="image4"  onclick="okej()">
+                                                    <img id="ID4" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon4.png" alt="image4"   >
                                                 </label>
                                             </div>
                                         </div>
@@ -199,25 +211,25 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture5" value="" aria-label="...">
                                                 <label for="radioPicture5">
-                                                    <img id="ID5" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon5.png" alt="image5"  onclick="okej()">
+                                                    <img id="ID5" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon5.png" alt="image5"   >
                                                 </label>
                                             </div>
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture6" value="" aria-label="...">
                                                 <label for="radioPicture6">
-                                                    <img id="ID6" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon6.png" alt="image6"  onclick="okej()">
+                                                    <img id="ID6" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon6.png" alt="image6"   >
                                                 </label>
                                             </div>
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture7" value="" aria-label="...">
                                                 <label for="radioPicture7">
-                                                    <img id="ID7" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon7.png" alt="image7"  onclick="okej()">
+                                                    <img id="ID7" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon7.png" alt="image7"   >
                                                 </label>
                                             </div>
                                             <div class="col-3" align="center">
                                                 <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture8" value="" aria-label="...">
                                                 <label for="radioPicture8">
-                                                    <img id="ID8" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon8.png" alt="image8"  onclick="okej()">
+                                                    <img id="ID8" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon8.png" alt="image8"   >
                                                 </label>
                                             </div>
                                         </div>
@@ -308,6 +320,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 <script src="../JS/profilePage.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
     const myModalAlternative = new bootstrap.Modal('#staticBackdrop')
     function pokaz(){
