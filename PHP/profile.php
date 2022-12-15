@@ -144,7 +144,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                             if($rows1[0]["prof_image"] != "")
                                 echo '<img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/'.$rows1[0]["prof_image"].'" alt="ProfileImage">';
                             else
-                                echo '<img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/ProfileImage.png" alt="ProfileImage">';
+                                echo '<img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/ProfileIcon.png" alt="ProfileImage">';
                         }
                         ?>
                     </div>

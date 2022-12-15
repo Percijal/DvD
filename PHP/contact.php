@@ -198,6 +198,8 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
     var zmienna = document.getElementById("okej");
 
     function Alert(){
+        document.getElementById("exampleFormControlInput1").value = "";
+        document.getElementById("exampleFormControlTextarea1").value = "";
         if(zmienna.classList.contains("invisible")) {
             zmienna.classList.add("visible")
             zmienna.classList.remove("invisible")
