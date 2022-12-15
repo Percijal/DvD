@@ -175,7 +175,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td cartClearButton"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
+                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
                                         <td><button class="cartPayButton">Zaplac</button></td>
                                         <!-- END PHP -->
                                     </tr>
