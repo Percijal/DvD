@@ -25,7 +25,7 @@ if ($logged)
         <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                        <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
+                        <a class="navbar-brand col-4" href="../PHP/index.php"><img src="../images/logo2.png" alt="logo" width="50px" height="50px" style="margin-left: 20px;"></a>
                         <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                         <div class="profileIcon">
                             <a class="nav-link col-1" href="
@@ -116,12 +116,12 @@ if ($logged)
                 <div class="main" style="padding: 15px;">
                     <div class="row">
                         <div class="col adminPageTitle">
-                            Panel administracji
+                            Administration panel
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" style="text-align: center;">
-                            Zarządzanie użytkownikami
+                            User management
                         </div>
                     </div>
                     <div>
@@ -178,7 +178,7 @@ if ($logged)
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                       </div>
                 </div>
             </div>
