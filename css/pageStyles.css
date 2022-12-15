@@ -60,6 +60,7 @@ label{
 /* UserBase page */
 
 .usersData{
+    margin-top: 15px;
     border: 1px solid black;
     border-radius: 10px;
     border-collapse: collapse;
@@ -78,11 +79,22 @@ label{
     border: 1px solid black;
     padding: 7px;
     text-align: center;
+}
 
+.adminPageTitle{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 /*==================================================== */
 /* Index/Main page */
+
+#banner{
+    border: 3px solid darkgray;
+    border-radius: 7%;
+}
 
 .discInfoBox{
     border: 1px solid black;
@@ -162,11 +174,11 @@ label{
     font-weight: bold;
     font-style: italic;
 }
-.cartOfFilms{
+/* .cartOfFilms{
     border: 1px solid black;
     border-radius: 10px;
     padding: 5px;
-}
+} */
 .clearTd{
     border: none;
     padding: 7px;
@@ -179,6 +191,9 @@ label{
     box-shadow: 7px 5px 5px gold;
     font-style: italic;
 }
+.cartClearButton:hover{
+    box-shadow: 7px 5px 5px darkred;
+}
 .cartPayButton{
     padding: 5px;
     margin: 5px;
@@ -186,6 +201,9 @@ label{
     border-radius: 25px;
     box-shadow: 7px 5px 5px gold;
     font-style: italic;
+}
+.cartPayButton:hover{
+    box-shadow: 7px 5px 5px darkred;
 }
 /* .cartClearButton > Button:hover{
     box-shadow: 7px 5px 5px darkred;
@@ -282,6 +300,69 @@ label{
 .termColumn{
     width: 200px ;
 }
+.profilePicture{
+    width: 182px;
+    height: 182px;
+}
+
+
+.profilePictureSelection{
+    border: none;
+}
+.selectProfilePicture{
+    width: 80%;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 2px solid #f00;   
+}
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  input[type=radio]:checked + label>img {
+    border: 1px solid #fff;
+    border-radius:50%;
+    box-shadow: 0 0 3px 3px darkorange;
+  }
+  
+  /* Stuff after this is only to make things more pretty */
+  input[type=radio] + label>img {
+    /* border: 1px dashed #444; */
+    transition: 500ms all;
+  }
+  
+  input[type=radio]:checked + label>img {
+    transform: 
+      rotateZ(-10deg) 
+      rotateX(10deg);
+  }
+
+.checkItButon{
+    margin-left: 5px;
+    width: 75px;
+    border-radius: 25px;
+    box-shadow: 7px 5px 5px gold;
+    font-style: italic;
+}
+.checkItButon:hover{
+    box-shadow: 7px 5px 5px darkred;
+}
 
 /*==================================================== */
 /* Media */
@@ -299,6 +380,10 @@ label{
     .thLast, .tdLast{
         width: 200px;
     }
+    #banner{
+        height: 450px;
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 1169px) and (min-width: 970px){
     .navbarButton {
@@ -310,6 +395,10 @@ label{
     .tableMovieImage{
         width: 80%
     }
+    #banner{
+        height: 450px;
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 969px) and (min-width: 750px){
     .navbarButton {
@@ -320,6 +409,10 @@ label{
     }
     .tableMovieImage{
         width: 80%
+    }
+    #banner{
+        height: 450px;
+        width: 100%;
     }
 }
 

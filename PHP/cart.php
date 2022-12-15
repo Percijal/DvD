@@ -168,7 +168,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td">Łączna Kwota:</td>
+                                        <td class="td"><b>Łączna Kwota:</b></td>
                                         <td id="countCart"></td>
                                         <!-- END PHP -->
                                     </tr>

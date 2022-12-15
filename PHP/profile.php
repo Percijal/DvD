@@ -131,20 +131,111 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
             <div class="main" style="display: block;">
 
                 <div class="row FromUPaBit">
-                    <div class="col logoBanner">
-                        <!-- skrypt wybierający z bazy iconę profilu w zależności od takiej jaka jest przypisana do użytkownika.  -->
-                        <!-- z założenia użytkownik będzie mógł ją zmienić. Są one dodane do folderu images -->
-                        
+                    <div class="col-6" align="right">
+
+                        <img id="mainPhoto" class="p-2 profilePicture" src="../images/ProfileIcons/profileIcon.png" alt="PprofileImage">
+
                     </div>
                     <div class="col UsersInfo">
 
                     <!-- sPHP -->
+
+                    <!-- *** -->
+                    <!-- W linijce nad 'log out' dałem pole wyboru. Użytkownik wybiera sobie jedną ikonę z pośród podanych i 
+                    zatwierdza przyciskiem. Po kliknięciu przycisku jakoś prześlesz dane do bazy i odświerzymy stronę aby pokazać
+                    użytkownikowi nowe zmiany w <img> powyżej . Wszystko jest w formularzu więc raczej bez większego problemu 
+                    podepniesz sobie PHP. Raczej zadziała (I guess...) 
+                
+                    Podobną rzecz zrobię w widgetach z wyświetlaniem na stronie głównej infa o płytach, ale będę potrzebował do nich
+                    infa z bazy przez JS w zależności jaki film jest wyświetlany. -->
+
                     <?php
                         // echo '<p><b>User ID:</b> <i>'.$_SESSION["UserId"].'</i></p>';
                         echo '<p><b>Name:</b> <i>'.$_SESSION["Name"].'</i></p>';
                         echo '<p><b>Surname:</b> <i>'.$_SESSION["Surname"].'</i></p>';
+                        echo '&nbsp';
+                        ?>
+                        <br>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Profile images</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture1" value="" aria-label="...">
+                                                <label for="radioPicture1">
+                                                    <img id="ID1" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon.png" alt="image1"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture2" value="" aria-label="...">
+                                                <label for="radioPicture2">
+                                                    <img id="ID2" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon2.png" alt="image2"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture3" value="" aria-label="...">
+                                                <label for="radioPicture3">
+                                                    <img id="ID3" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon3.png" alt="image3"  onclick="okej()">
+                                                </label>
+                                            </div>
+
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture4" value="" aria-label="...">
+                                                <label for="radioPicture4">
+                                                    <img id="ID4" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon4.png" alt="image4"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture5" value="" aria-label="...">
+                                                <label for="radioPicture5">
+                                                    <img id="ID5" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon5.png" alt="image5"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture6" value="" aria-label="...">
+                                                <label for="radioPicture6">
+                                                    <img id="ID6" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon6.png" alt="image6"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture7" value="" aria-label="...">
+                                                <label for="radioPicture7">
+                                                    <img id="ID7" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon7.png" alt="image7"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                            <div class="col-3" align="center">
+                                                <input class="form-check-input" type="radio" name="radioPicture" id="radioPicture8" value="" aria-label="...">
+                                                <label for="radioPicture8">
+                                                    <img id="ID8" class="selectProfilePicture" src="../images/ProfileIcons/profileIcon8.png" alt="image8"  onclick="okej()">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btn-warning" data-bs-dismiss="modal" onclick="whichImage()">Try it</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="color: white;"><b>Change ProfileImage:</b>
+                        <button class="checkItButon" onclick="pokaz()">Try it</button></p>
+                        <?php
                         echo '<a href="./logOut.php">Log out</a>'
                     ?>
+                    <!-- END PHP -->
                     </div>
                 </div>
                 <hr style="border: 1px solid black;">
@@ -154,45 +245,45 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                     </div>
                 </div><br>
-                    <div class="row">
-                        <div class="col-4 offset-4 profileMovieInfo">
-                            <!-- sPHP -->
-                            <?php
-                                if(!isset($rows[0])){
-                                    echo '<q>To co?</q><br>
-                                        <q class="lastText">Pora coś kupić :3</q><br>
-                                        <p></p>';
+                <div class="row">
+                    <div class="col-4 offset-4 profileMovieInfo">
+                        <!-- sPHP -->
+                        <?php
+                            if(!isset($rows[0])){
+                                echo '<q>To co?</q><br>
+                                    <q class="lastText">Pora coś kupić :3</q><br>
+                                    <p></p>';
+                            }
+                            else{
+                                $i=1;
+                                echo'<table class="personalMovies">
+                                <tr>
+                                    <th class="iDColumn" style="padding: 5px">id.</th>
+                                    <th class="imageColumn">image</th>
+                                    <th class="titleColumn">tytul</th>
+                                    <th class="termColumn">Termin zwrotu</th>
+                                </tr>';
+                                foreach ($rows as $row) {
+                                    echo'
+                                        <tr>
+                                            <td>'.$i.".</td>
+                                            <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
+                                            <td><q>".$row['title']."</q></td>
+                                            <td>".$row['date_end']."</td>
+                                        </tr>
+                                    ";
+                                    $i++;
                                 }
-                                else{
-                                    $i=1;
-                                    echo'<table class="personalMovies">
-                                    <tr>
-                                        <th class="iDColumn" style="padding: 5px">id.</th>
-                                        <th class="imageColumn">image</th>
-                                        <th class="titleColumn">tytul</th>
-                                        <th class="termColumn">Termin zwrotu</th>
-                                    </tr>';
-                                    foreach ($rows as $row) {
-                                        echo'
-                                            <tr>
-                                                <td>'.$i.".</td>
-                                                <td><img class='tableMovieImage' src='../images/FILMS/". $row['image'] ."'></td>
-                                                <td><q>".$row['title']."</q></td>
-                                                <td>".$row['date_end']."</td>
-                                            </tr>
-                                        ";
-                                        $i++;
-                                    }
-                                    echo '</table><p></p>';
+                                echo '</table><p></p>';
 
-                                }
+                            }
 
-                            ?>
-                            <!-- ePHP -->
-                        </div>
-                                
-                        
+                        ?>
+                        <!-- ePHP -->
                     </div>
+                    <hr style="border: 1px solid black; margin-top: 10px;">      
+                    
+                </div>
                     
             </div>
 
@@ -213,5 +304,13 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 </body>
 </html>
 
+
+<script src="../JS/profilePage.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+    const myModalAlternative = new bootstrap.Modal('#staticBackdrop')
+    function pokaz(){
+        myModalAlternative.show();
+    }
+</script>

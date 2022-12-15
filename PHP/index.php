@@ -126,7 +126,8 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="main" style="display: block;">
                 <div class="logoBanner" style="display: block; padding: 15px;">
-                    <p style="border: 1px solid black;margin-top: 10px; padding: 20px;">Miejsce na banner</p>
+                    <!-- <p style="border: 1px solid black;margin-top: 10px; padding: 20px;">Miejsce na banner</p> -->
+                    <img id="banner" src="../images/bannerTest.jpg" alt="baner">
                 </div>
                 <!-- ====================================================================== -->
                 <div class="main" style="padding: 15px;">
@@ -153,6 +154,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div>
+
                     <br>
                     <hr>
                     <div class="row justify-content-around">
