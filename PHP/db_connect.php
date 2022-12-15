@@ -1,6 +1,35 @@
 <?php
-    $pdo = new PDO('sqlite:../DB/DVDBase.db');
 
+    //Singleton pattern
+    class DBConnection
+    {
+        private static $instance;
+        private $pdo;
+    
+        private function __construct()
+        {
+            $dsn = 'sqlite:../DB/DVDBase.db';
+    
+            $this->pdo = new PDO($dsn);
+        }
+    
+        public static function getInstance()
+        {
+            if (self::$instance === null) {
+                self::$instance = new self();
+            }
+    
+            return self::$instance;
+        }
+    
+        public function getPDO()
+        {
+            return $this->pdo;
+        }
+    }
+    
+    $pdo = DBConnection::getInstance()->getPDO();
+    
     //builder pattern
     interface SQLQueryBuilder
     {

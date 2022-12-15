@@ -154,11 +154,11 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     $i=1;
                                     foreach ($rows as $row) {
                                         echo '<tr>
-                                        <td class="td">'.$i.'.</td>
-                                        <td class="td">'.$row['title'].'</td>
+                                        <td class="td" id="'.$i.'">'.$i.'.</td>
+                                        <td class="td"  id="title_'.$i.'">'.$row['title'].'</td>
                                         <td class="td">'.round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
-                                        <td class="td">'.$row["number_of"].'</td>
-                                        <td class="td price">'.$row["number_of"] * round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
+                                        <td class="td" id="number_'.$i.'">'.$row["number_of"].'</td>
+                                        <td class="td price" id="price_'.$i.'">'.$row["number_of"] * round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
                                         <td class="td"><a href="#">Usun Film</a></td>
                                         </tr>';
                                         $i++;
@@ -175,7 +175,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td cartClearButton"><button class="cartClearButton">Usun koszyk</button></td>
+                                        <td class="td cartClearButton"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
                                         <td><button class="cartPayButton">Zaplac</button></td>
                                         <!-- END PHP -->
                                     </tr>
@@ -209,4 +209,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="../js/countCart.js"></script>
+<script src="../js/clearCart.js"></script>
+<script src="../js/payForCart.js"></script>
