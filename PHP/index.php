@@ -165,7 +165,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
-                            Nowiusieńkie filmy:
+                            Latest movies:
                         </div>
                         <div class="col-4 arrowButtonRight">
                             <button class="">
@@ -194,7 +194,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
-                            Przecenione filmy:
+                            Discounted movies:
                         </div>
                         <div class="col-4 arrowButtonRight">
                             <button class="">
@@ -223,7 +223,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
-                            Kultowe filmy:
+                            Cult movies:
                         </div>
                         <div class="col-4 arrowButtonRight">
                             <button class="">
@@ -262,7 +262,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                     </div>
                 </div>
             </div>
@@ -325,7 +325,7 @@ if(isset($_POST["Search"])){
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
+                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
                         </div>
                         </div>
                     </div>

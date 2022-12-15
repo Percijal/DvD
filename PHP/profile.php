@@ -232,8 +232,8 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
 
-                        <p style="color: white;"><b>Change ProfileImage:</b>
-                        <button class="checkItButon" onclick="pokaz()">Try it</button></p>
+                        <p style="color: white;"><b>Change Profile Image:</b>
+                        <button class="checkItButon" onclick="pokaz()">Change it</button></p>
                         <?php
                         echo '<a href="./logOut.php">Log out</a>'
                     ?>
@@ -243,7 +243,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                 <hr style="border: 1px solid black;">
                 <div class="row">
                     <div class="col profileMovieTitle">
-                        <q>Twoje Wypożyczenia</q>
+                        <q>Your Rentals</q>
 
                     </div>
                 </div><br>
@@ -252,9 +252,9 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                         <!-- sPHP -->
                         <?php
                             if(!isset($rows[0])){
-                                echo '<q>To co?</q><br>
-                                    <q class="lastText">Pora coś kupić :3</q><br>
-                                    <p></p>';
+                                echo "<q>Now what?</q><br>
+                                    <q class='lastText'>It's time to rent something :3</q><br>
+                                    <p></p>";
                             }
                             else{
                                 $i=1;
@@ -262,8 +262,8 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                 <tr>
                                     <th class="iDColumn" style="padding: 5px">id.</th>
                                     <th class="imageColumn">image</th>
-                                    <th class="titleColumn">tytul</th>
-                                    <th class="termColumn">Termin zwrotu</th>
+                                    <th class="titleColumn">Title</th>
+                                    <th class="termColumn">Renting Duration</th>
                                 </tr>';
                                 foreach ($rows as $row) {
                                     echo'
@@ -295,7 +295,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                       </div>
                 </div>
             </div>

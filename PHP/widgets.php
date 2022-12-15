@@ -39,23 +39,23 @@ class ClassicWidget implements Widget
                                 <div class="d-flex col-6 align-items-center items-center justify-content-center">
                                     <div class="col">
                                         <div class="col">
-                                            <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
+                                            <b>Title: <q class="movieTitle">'. $data["title"] .'</q></b>
                                         </div>
                                         <div class="col">
-                                            <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                                            <b>Genre: <span class="movieTitle">'. $data["genre"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
+                                            <b>Author: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
+                                            <b>Year of production: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                            <b>Description: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                         </div>
                                         <br>
                                         <div class="col">
-                                            <b>Cena: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
+                                            <b>Price: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ class ClassicWidget implements Widget
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
+                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
                         </div>
                         </div>
                     </div>
@@ -73,9 +73,9 @@ class ClassicWidget implements Widget
                 <div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
-                <p class="moviePriceName">Cena / per. Month: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
-                <button id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
-                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#model_0'.$data["id"] .'">Wincej informacji</a>
+                <p class="moviePriceName">Price / per. Month: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
+                <button id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
+                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#model_0'.$data["id"] .'">More information</a>
                 </div>');
     }
 }
@@ -85,11 +85,11 @@ class NewWidget implements Widget
     public function __construct($data)
     {
         return print('<!-- Modal -->
-                <div class="modal fade" id="model_0'.$data["id"] .'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="latestModel_0'.$data["id"] .'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modelLabel_0'.$data["id"] .'">Informacje</h1>
+                            <h1 class="modal-title fs-5" id="latestModelLabel_0'.$data["id"] .'">Informacje</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -100,23 +100,23 @@ class NewWidget implements Widget
                                 <div class="d-flex col-6 align-items-center items-center justify-content-center">
                                     <div class="col">
                                         <div class="col">
-                                            <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
+                                            <b>Title: <q class="movieTitle">'. $data["title"] .'</q></b>
                                         </div>
                                         <div class="col">
-                                            <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                                            <b>Genre: <span class="movieTitle">'. $data["genre"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
+                                            <b>Author: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
+                                            <b>Year of production: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                         </div>
                                         <div class="col">
-                                            <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                            <b>Description: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                         </div>
                                         <br>
                                         <div class="col">
-                                            <b>Cena: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
+                                            <b>Price: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@ class NewWidget implements Widget
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
+                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
                         </div>
                         </div>
                     </div>
@@ -134,9 +134,9 @@ class NewWidget implements Widget
                 <div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
-                <p class="moviePriceName">Cena / per. Month: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
-                <button id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
-                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#model_0'.$data["id"] .'">Wincej informacji</a>
+                <p class="moviePriceName">Price / per. Month: </p><p class="movieOficialPrice">'. $data["price"] .'</p>
+                <button id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
+                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#latestModel_0'.$data["id"] .'">More information</a>
                 </div>');
     }
 }
@@ -161,23 +161,23 @@ class DiscountedWidget implements Widget
                         <div class="d-flex col-6 align-items-center items-center justify-content-center">
                             <div class="col">
                                 <div class="col">
-                                    <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
+                                    <b>Title: <q class="movieTitle">'. $data["title"] .'</q></b>
                                 </div>
                                 <div class="col">
-                                    <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                                    <b>Genre: <span class="movieTitle">'. $data["genre"] .'</span></b>
                                 </div>
                                 <div class="col">
-                                    <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
+                                    <b>Author: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                 </div>
                                 <div class="col">
-                                    <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
+                                    <b>Year of production: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                 </div>
                                 <div class="col">
-                                    <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                    <b>Description: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                 </div>
                                 <br>
                                 <div class="col">
-                                <b>Cena: <span class="movieTitle">'. round($data["price"] - ($discount/100 * $data["price"]),2) ."/per.month" .'</span></b>
+                                    <b>Price: <span class="movieTitle">'. round($data["price"] - ($discount/100 * $data["price"]),2) ."/per.month" .'</span></b>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +186,7 @@ class DiscountedWidget implements Widget
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
+                    <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
                 </div>
                 </div>
             </div>
@@ -195,9 +195,9 @@ class DiscountedWidget implements Widget
                 <div class="col-2 discInfoBox">
                 <img class="movieImage" src="../images/FILMS/'. $data["image"] .'"><br>
                 <q class="movieTitle">'. $data["title"] .'</q>
-                <p class="moviePriceName">Cena / per. Month: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
-                <button id="'. $discount .'_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
-                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#discountedModel_0'.$data["id"] .'" >Wincej informacji</a>
+                <p class="moviePriceName">Price / per. Month: </p><s class="moviePrice">'. $data["price"] .'</s><p class="movieOficialPrice">'. round($data["price"] - ($discount/100 * $data["price"]),2) .'</p>
+                <button id="'. $discount .'_'. $data["id"] .'" onclick="addToCart(this)">Add to Cart</button><br><br>
+                <a href="DanePłyta" data-bs-toggle="modal" data-bs-target="#discountedModel_0'.$data["id"] .'" >More information</a>
                 </div>');
     }
 }
