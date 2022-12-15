@@ -24,50 +24,41 @@ class ClassicWidget implements Widget
     {
         return print('<!-- Modal -->
                 <div class="modal fade" id="model_0'.$data["id"] .'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="modelLabel_0'.$data["id"] .'">Informacje</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="row">
-                                <div class="col-6" align="center">
+                            <div class="row ">
+                                <div class="col-6" lign-items-center items-center justify-content-center">
                                     <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
                                 </div>
-                                <div class="col-6" align="center">
-                                    <div class="row">
+                                <div class="d-flex col-6 align-items-center items-center justify-content-center">
+                                    <div class="col">
                                         <div class="col">
                                             <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col">
                                             <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col">
                                             <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col">
                                             <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col">
-                                            <b>Opis: <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                            <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
+                                        <br>
                                         <div class="col">
                                             <b>Cena: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -93,50 +84,41 @@ class DiscountedWidget implements Widget
     {
         return print('<!-- Modal -->
         <div class="modal fade" id="discountedModel_0'.$data["id"] .'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="discountedModelLabel_0'.$data["id"] .'">Informacje</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-6" align="center">
+                    <div class="row ">
+                        <div class="col-6" lign-items-center items-center justify-content-center">
                             <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
                         </div>
-                        <div class="col-6" align="center">
-                            <div class="row">
+                        <div class="d-flex col-6 align-items-center items-center justify-content-center">
+                            <div class="col">
                                 <div class="col">
                                     <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
                                 </div>
-                            </div>
-                            <div class="row">
-                            <div class="col">
-                                <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
-                            </div>
-                            </div>
-                            <div class="row">
+                                <div class="col">
+                                    <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                                </div>
                                 <div class="col">
                                     <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col">
                                     <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col">
-                                    <b>Opis: <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                    <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="row">
+                                <br>
                                 <div class="col">
-                                    <b>Cena: <span class="movieTitle">'. round($data["price"] - ($discount/100 * $data["price"]),2) ."/per.month" .'</span></b>
+                                <b>Cena: <span class="movieTitle">'. round($data["price"] - ($discount/100 * $data["price"]),2) ."/per.month" .'</span></b>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
