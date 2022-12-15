@@ -118,6 +118,7 @@ if($ready){
                 <div class="row justify-content-sm-center">
                     <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                         <input type="submit" value="Register" class="registerButton">
+                        <br>
                     </div>
                 </div>
                 

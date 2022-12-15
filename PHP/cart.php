@@ -132,7 +132,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="row">
                     <div class="col cartTitle">
-                        Koszyk
+                        Cart
                     </div>
                 </div>
                 <hr style="margin-bottom: 25px">
@@ -143,11 +143,11 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                 <table class="table table-responsive">
                                     <tr>
                                         <th class="th">id</th>
-                                        <th class="th">Tytul</th>
-                                        <th class="th">Cena</th>
-                                        <th class="th">Czas trwania wypożyczenia(miesiace)</th>
-                                        <th class="th">Koszt</th>
-                                        <th class="th">Usun Film</th>
+                                        <th class="th">Title</th>
+                                        <th class="th">Price</th>
+                                        <th class="th">Renting Duration(months)</th>
+                                        <th class="th">Cost</th>
+                                        <th class="th">remove the film</th>
                                     </tr>
 
                                     <!-- sPHP -->
@@ -160,7 +160,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                         <td class="td">'.round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
                                         <td class="td" id="number_'.$i.'">'.$row["number_of"].'</td>
                                         <td class="td price" id="price_'.$i.'">'.$row["number_of"] * round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
-                                        <td class="td"><a href="deleteProd.php?id='.$row['id'].'">Usun Film</a></td>
+                                        <td class="td"><a href="deleteProd.php?id='.$row['id'].'">Remove Film</a></td>
                                         </tr>';
                                         $i++;
                                     }
@@ -169,15 +169,15 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td"><b>Łączna Kwota:</b></td>
+                                        <td class="td"><b>Total Price:</b></td>
                                         <td id="countCart"></td>
                                         <!-- END PHP -->
                                     </tr>
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
-                                        <td><button class="cartPayButton">Zaplac</button></td>
+                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Clear Basket</button></td>
+                                        <td><button class="cartPayButton">Pay</button></td>
                                         <!-- END PHP -->
                                     </tr>
                                 </table>
@@ -198,7 +198,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                       </div>
                 </div>
             </div>

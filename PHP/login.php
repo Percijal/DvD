@@ -67,7 +67,8 @@ if($ready){
                             <?php
                                 if($ready){
                                     ?>
-                                        <li><b><i>Złe dane</i></b></li>
+                                        <br>
+                                        <li><b><i>Wrong login details</i></b></li>
                                     <?php
                                 }
                             ?>

@@ -144,22 +144,22 @@ if ($logged)
                                 <div class="row" style="position: relative; padding: 40px; padding-top: 20px;">
                                     <div class="col">
                                         <legend>
-                                            <h2 class="display-4">Kontakt</h1>
-                                            <p class="lead">W razie potrzeby napisz do nas:</p>
+                                            <h2 class="display-4">Contact</h1>
+                                            <p class="lead">Please write to us if necessary:</p>
                                             <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">Adres e-mail:</label>
-                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="twój@email.com">
+                                                <label for="exampleFormControlInput1" class="form-label">Adress e-mail:</label>
+                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="your@email.com">
                                               </div>
                                               <div class="mb-3">
-                                                <label for="exampleFormControlTextarea1" class="form-label">Wiadomość:</label>
+                                                <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
                                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                               </div>
-                                              <button class="btn" type="submit" onclick="Alert()" style="background-color:bisque; ">Button</button>
+                                              <button class="btn" type="submit" onclick="Alert()" style="background-color:bisque; ">Send</button>
                                               <p></p>
                                               <div class="alert alert-success d-flex align-items-center invisible" role="alert" id="okej" style="display: none;">
                                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
                                                 <div>
-                                                  Twoja wiadomość została dostarczona
+                                                    Your message has been delivered
                                                 </div>
                                               </div>
                                         </legend>
@@ -182,7 +182,7 @@ if ($logged)
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Kontakt</u></a>
+                        <a class="float-end" href="" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                     </div>
                 </div>
             </div>
