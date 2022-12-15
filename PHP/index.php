@@ -11,6 +11,7 @@ $sql = new SqlLiteQueryBuilder();
 $query = $pdo -> query($sql ->select("DVDs", ["*"])
               ->getSQL());
 $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -116,8 +117,8 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                 <!-- ePHP -->
 
                             </ul>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <form class="d-flex" role="search" method="POST">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </div>
@@ -164,6 +165,35 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
+                            Nowiusieńkie filmy:
+                        </div>
+                        <div class="col-4 arrowButtonRight">
+                            <button class="">
+                                <img src="../images/PageIcons/ArrowRight.png" alt="ArrowRight.png" width="50px" height="50px">
+                            </buton>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-around" style="text-align: center;">
+                        
+                        <!-- sPHP -->
+                        <?php
+                            for ($i=5; $i < 10; $i++) { 
+                                StaticFactory::factory('new', $rows[$i], 20);
+                            }
+                        ?>
+                        <!-- ePHP -->
+
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="row justify-content-around">
+                        <div class="col-4 arrowButtonLeft">
+                            <button class="">
+                                <img src="../images/PageIcons/ArrowLeft.png" alt="ArrowLeft.png" width="50px" height="50px">
+                            </button>
+                        </div>
+                        <div class="col-3 normalMovieInfo">
                             Przecenione filmy:
                         </div>
                         <div class="col-4 arrowButtonRight">
@@ -193,7 +223,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                             </button>
                         </div>
                         <div class="col-3 normalMovieInfo">
-                            Nowe kultowe filmy:
+                            Kultowe filmy:
                         </div>
                         <div class="col-4 arrowButtonRight">
                             <button class="">
@@ -206,7 +236,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         
                         <!-- sPHP -->
                         <?php
-                            for ($i=4; $i >= 0; $i--) { 
+                            for ($i=10; $i < 15; $i++) { 
                                 StaticFactory::factory('classic', $rows[$i]);
                             }
                         ?>
@@ -244,3 +274,70 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="../js/addToCart.js"></script>
 <!-- <script src="../js/baner.js"></script> -->
+
+<!-- Pseudo search nwm czy zostawić, jak coś to usuń -->
+<?php
+
+if(isset($_POST["Search"])){
+    $search = $_POST["Search"];
+    if($search != ""){
+        foreach($rows as $data){
+            if(strtolower($data["title"])==strtolower($search)){
+                unset($_POST["Search"]);
+                echo '<!-- Modal -->
+                <div class="modal fade" id="search" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modelLabel_0'.$data["id"] .'">Informacje</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row ">
+                                <div class="col-6" lign-items-center items-center justify-content-center">
+                                    <img class="movieImage" src="../images/FILMS/'. $data["image"] .'">
+                                </div>
+                                <div class="d-flex col-6 align-items-center items-center justify-content-center">
+                                    <div class="col">
+                                        <div class="col">
+                                            <b>Tytuł: <q class="movieTitle">'. $data["title"] .'</q></b>
+                                        </div>
+                                        <div class="col">
+                                            <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                                        </div>
+                                        <div class="col">
+                                            <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
+                                        </div>
+                                        <div class="col">
+                                            <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
+                                        </div>
+                                        <div class="col">
+                                            <b>Opis: <br> <span class="movieTitle">'.  $data["descrip"] .'</span></b>
+                                        </div>
+                                        <br>
+                                        <div class="col">
+                                            <b>Cena: <span class="movieTitle">'. $data["price"]."/per.month" .'</span></b>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-warning" data-bs-dismiss="modal" id="0_'. $data["id"] .'" onclick="addToCart(this)">DO KOSZYKA</button><br><br>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                const myModalAlternative = new bootstrap.Modal("#search")
+                myModalAlternative.show();
+                </script>';
+                break;
+            };
+        };
+        
+    };
+}
+?>
