@@ -15,7 +15,7 @@ final class StaticFactory
 
 interface Widget
 {
-
+    
 }
 
 class ClassicWidget implements Widget

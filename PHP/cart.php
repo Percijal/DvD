@@ -33,7 +33,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
         <div class="top" style="background-color: gray">
                 <nav class="navbar" style="padding: 0px;">
                     <div class="container-fluid" style="padding: 15px; background-color: bisque;">
-                        <a class="navbar-brand col-4" href="../PHP/index.php">Logo strony</a>
+                        <a class="navbar-brand col-4" href="../PHP/index.php"><img src="../images/logo2.png" alt="logo" width="50px" height="50px" style="margin-left: 20px;"></a>
                         <div class="col-sm-3 col-md-4 col-lg-5"></div> 
                         <div class="profileIcon">
                             <a class="nav-link col-1" href="
