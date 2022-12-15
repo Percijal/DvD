@@ -6,13 +6,14 @@ require("db_connect.php");
 $logged = isset($_SESSION["UserId"]); //boolean
 if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
-
+    
 $sql = new SqlLiteQueryBuilder();
-$query = $pdo -> query($sql ->select('Cart', ['*'])
+$query = $pdo -> query($sql ->select('Cart', ['Cart.id','title', 'price', 'number_of', 'discount'])
               -> join('Cart', 'DVDs', 'id_dvd', 'id')
               -> where('id_user', $_SESSION["UserId"])
               -> getSQL() );
 $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
+// print_r($rows)
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -159,7 +160,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                         <td class="td">'.round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
                                         <td class="td" id="number_'.$i.'">'.$row["number_of"].'</td>
                                         <td class="td price" id="price_'.$i.'">'.$row["number_of"] * round($row["price"] - ($row['discount']/100 * $row["price"]),2).'</td>
-                                        <td class="td"><a href="#">Usun Film</a></td>
+                                        <td class="td"><a href="deleteProd.php?id='.$row['id'].'">Usun Film</a></td>
                                         </tr>';
                                         $i++;
                                     }
@@ -175,7 +176,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td cartClearButton"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
+                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Usun koszyk</button></td>
                                         <td><button class="cartPayButton">Zaplac</button></td>
                                         <!-- END PHP -->
                                     </tr>
