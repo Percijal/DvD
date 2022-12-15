@@ -1,8 +1,8 @@
-const cells = document.querySelectorAll('td.price');
+const cells = document.getElementsByClassName('price');
 
-const sum = Array.prototype.reduce.call(cells, (acc, cell) => {
-  return acc + Number(cell.textContent);
-}, 0);
+sum = 0
+for (let index = 0; index < cells.length; index++) {
+  sum += parseFloat(cells[index].innerText)
+}
 
-
-document.getElementById("countCart").innerText = sum.toString();
+document.getElementById("countCart").innerHTML = sum.toFixed(2);
