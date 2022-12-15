@@ -43,22 +43,22 @@ class ClassicWidget implements Widget
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <b>Gatunek: <span class="movieTitle">'.  " ..."/* gatunek danego filmu z bazy */.'</span></b>
+                                            <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <b>Autor: <span class="movieTitle">'.  " ..."/* autor danego filmu z bazy */.'</span></b>
+                                            <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <b>Rok produkcji: <span class="movieTitle">'.  " ..."/* rok danego filmu z bazy */.'</span></b>
+                                            <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <b>Opis: <span class="movieTitle">'.  " ..."/* opis danego filmu z bazy */.'</span></b>
+                                            <b>Opis: <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                         </div>
                                     </div>
                                     <br>
@@ -111,23 +111,23 @@ class DiscountedWidget implements Widget
                                 </div>
                             </div>
                             <div class="row">
+                            <div class="col">
+                                <b>Gatunek: <span class="movieTitle">'. $data["genre"] .'</span></b>
+                            </div>
+                            </div>
+                            <div class="row">
                                 <div class="col">
-                                    <b>Gatunek: <span class="movieTitle">'.  " ..."/* gatunek danego filmu z bazy */.'</span></b>
+                                    <b>Autor: <span class="movieTitle">'.  $data["author"] .'</span></b>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <b>Autor: <span class="movieTitle">'.  " ..."/* autor danego filmu z bazy */.'</span></b>
+                                    <b>Rok produkcji: <span class="movieTitle">'.  $data["year"] .'</span></b>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <b>Rok produkcji: <span class="movieTitle">'.  " ..."/* rok danego filmu z bazy */.'</span></b>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <b>Opis: <span class="movieTitle">'.  " ..."/* opis danego filmu z bazy */.'</span></b>
+                                    <b>Opis: <span class="movieTitle">'.  $data["descrip"] .'</span></b>
                                 </div>
                             </div>
                             <br>
