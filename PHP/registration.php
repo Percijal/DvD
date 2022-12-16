@@ -33,7 +33,7 @@ if($ready){
         foreach ($_POST as $k=>$v) {
             unset($_POST[$k]);
         }
-        header("Location: /php/login.php");
+        header("Location: ../php/login.php");
         exit();
     }
 }
