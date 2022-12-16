@@ -176,8 +176,8 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <!-- Start PHP -->
                                         <td class="clearTd" colspan="3"></td>
-                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Clear Basket</button></td>
-                                        <td><button class="cartPayButton">Pay</button></td>
+                                        <td class="td"><button class="cartClearButton" onclick="clearCart()">Clear Cart</button></td>
+                                        <td><button class="cartPayButton" onclick="pay()">Pay</button></td>
                                         <!-- END PHP -->
                                     </tr>
                                 </table>
@@ -214,3 +214,4 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 <script src="../js/countCart.js"></script>
 <script src="../js/clearCart.js"></script>
 <script src="../js/payForCart.js"></script>
+<script src="../js/pay.js"></script>
