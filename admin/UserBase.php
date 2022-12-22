@@ -149,12 +149,12 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $row) {
                                 echo'
                                     <tr>
-                                        <td class="td"><form id="form'.$row['id'].'" method="GET" action="edit.php">'.$row['id'].'<input type="text" name="id_user" value="'.$row['id'].'" hidden></form></td>
+                                        <td class="td"><form id="form'.$row['id'].'" method="GET" action="edit.php" onchange="Let()">'.$row['id'].'<input type="text" name="id_user" value="'.$row['id'].'" hidden></form></td>
                                         <td class="td">'.$row['email'].'</td>
-                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="login" value="'.$row['login'].'"></td>
-                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="name" value="'.$row['name'].'"></td>
-                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="surname" value="'.$row['surname'].'"></td>
-                                        <td class="td tdLast"> <input class="isChecked" type="checkbox" id="" name="" value=""> <input class="inputChanges editButton" form="form'.$row['id'].'" type="submit" value="edit"> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
+                                        <td class="td"><input class="inputChanges" id="Firstchange.'.$row['id'].'" form="form'.$row['id'].'" type="text" name="login" value="'.$row['login'].'" disabled></td>
+                                        <td class="td"><input class="inputChanges" id="Secondchange.'.$row['id'].'" form="form'.$row['id'].'" type="text" name="name" value="'.$row['name'].'" disabled></td>
+                                        <td class="td"><input class="inputChanges" id="Thirdchange.'.$row['id'].'" form="form'.$row['id'].'" type="text" name="surname" value="'.$row['surname'].'" disabled></td>
+                                        <td class="td tdLast"> <input class="isChecked" id="FirstCheckbox.'.$row['id'].'" type="checkbox" id="" name="" value="" onchange="Let('.$row['id'].')"> <input class="inputChanges editButton" form="form'.$row['id'].'" type="submit" value="edit"> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
                                     </tr>
                                 ';
                                 }
@@ -192,9 +192,9 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                             <td class="td">'. $row["genre"] .'</td>
                                             <td class="td">'. $row["author"].'</td>
                                             <td class="td">'. $row["year"] .'</td>
-                                            <td class="td"><textarea form="formMovie'.$row['id'].'" type="text" name="descrip">'.$row['descrip'].'</textarea></td> 
-                                            <td class="td"><input form="formMovie'.$row['id'].'" type="number" step="0.01" min="0" name="price" value="'.$row['price'].'"></td> 
-                                            <td class="td tdLast"><input form="formMovie'.$row['id'].'" type="submit" value="edit"> || <a href="deleteFilm.php?id='.$row['id'].'">delete movie</a></td>
+                                            <td class="td"><textarea id="FirstMoviechange.'.$row['id'].'" form="formMovie'.$row['id'].'" type="text" name="descrip" disabled>'.$row['descrip'].'</textarea></td> 
+                                            <td class="td"><input id="SecondMoviechange.'.$row['id'].'" form="formMovie'.$row['id'].'" type="number" step="0.01" min="0" name="price" value="'.$row['price'].'" disabled></td> 
+                                            <td class="td tdLast"> <input class="isChecked" id="SecondMovieCheckbox.'.$row['id'].'" type="checkbox" id="" name="" value="" onchange="Let2('.$row['id'].')"> <input class="inputChanges editButton" form="formMovie'.$row['id'].'" type="submit" value="edit"> || <a href="deleteFilm.php?id='.$row['id'].'">delete movie</a></td>
                                         </tr>
                                     ';
                                     }
@@ -225,7 +225,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                     <p class="col-3">...</p>
                     <p class="col-3 offset-1">Tel: +48 123 456 789</p>
                     <div class="col-2">
-                        <a class="float-end" href="contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
+                        <a class="float-end" href="../PHP/contact.php" style="padding-right: 15px; color: black; background-color: transparent; text-decoration: none;"><u>Contact</u></a>
                       </div>
                 </div>
             </div>
@@ -237,3 +237,57 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="textarea.js"></script>
+
+<script>
+    
+
+    function Let(id){
+        var zmiennaProfile1 = document.getElementById("Firstchange." + id);
+        var zmiennaProfile2 = document.getElementById("Secondchange." + id);
+        var zmiennaProfile3 = document.getElementById("Thirdchange." + id);
+        var checkbox1 = document.getElementById("FirstCheckbox." + id);
+        if (checkbox1.checked) {
+            zmiennaProfile1.removeAttribute("disabled");
+            zmiennaProfile2.removeAttribute("disabled");
+            zmiennaProfile3.removeAttribute("disabled");
+
+            zmiennaProfile1.classList.add("currentChange");
+            zmiennaProfile2.classList.add("currentChange");
+            zmiennaProfile3.classList.add("currentChange");
+            // console.log("Test1");
+        }
+        else{
+            zmiennaProfile1.setAttribute("disabled", true);
+            zmiennaProfile2.setAttribute("disabled", true);
+            zmiennaProfile3.setAttribute("disabled", true);
+
+            zmiennaProfile1.classList.remove("currentChange");
+            zmiennaProfile2.classList.remove("currentChange");
+            zmiennaProfile3.classList.remove("currentChange");
+        }
+        // console.log("Test2");
+    }
+
+    function Let2(id){
+        var zmiennaMovie1 = document.getElementById("FirstMoviechange." + id);
+        var zmiennaMovie2 = document.getElementById("SecondMoviechange." + id);
+        var checkbox2 = document.getElementById("SecondMovieCheckbox." + id);
+        if (checkbox2.checked) {
+            zmiennaMovie1.removeAttribute("disabled");
+            zmiennaMovie2.removeAttribute("disabled");
+
+            zmiennaMovie1.classList.add("currentChange2");
+            zmiennaMovie2.classList.add("currentChange2");
+            // console.log("Test1");
+        }
+        else{
+            zmiennaMovie1.setAttribute("disabled", true);
+            zmiennaMovie2.setAttribute("disabled", true);
+
+            zmiennaMovie1.classList.remove("currentChange2");
+            zmiennaMovie2.classList.remove("currentChange2");
+        }
+    }
+    
+    // console.log("Test3");
+</script>

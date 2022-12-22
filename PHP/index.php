@@ -132,7 +132,7 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <!-- ====================================================================== -->
                 <div class="main" style="padding: 15px;">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col" style="text-align: center;">
                             Index.php (Nazwa Strony)
                         </div>
@@ -152,6 +152,49 @@ $rows = $query -> fetchAll(PDO::FETCH_ASSOC);
                         <div class="col" style="text-align: center;">
                             <div class="discInfo">
                                 [ Poniżej Info o płycie będzie (div + info z bazy) * n ]
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <hr>
+                    <br>
+
+                    <div class="row justify-content-center">
+                        <div class="col-4 justify-content-center" style="text-align: center;">
+                            <img src="../images/image1.png" alt="image1">
+                        </div>
+                        <div class="col-4 justify-content-center" style="text-align: center;">
+                            <img src="../images/image2.png" alt="image2">
+                        </div>
+                        <div class="col-4 justify-content-center" style="text-align: center;">
+                            <img src="../images/image3.png" alt="image3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="col" style="text-align: center;">
+                                <b><i><h2>Watch anywhere</h2></i></b>
+                            </div>
+                            <div class="col" style="text-align: center;">
+                                <h5>Enjoy from the web or with the "HH Junior" app on 
+                                    your phone, tablet, or select Smart TVs — on up to 3 devices at once.</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="col" style="text-align: center;">
+                                <b><i><h2>Download and go</h2></i></b>
+                            </div>
+                            <div class="col" style="text-align: center;">
+                                <h5>Watch offline on the "HH Junior" app when you download 
+                                    titles to your iPhone, iPad, Tablet, or Android device.</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="col" style="text-align: center;">
+                                <b><i><h2>Data saver</h2></i></b>
+                            </div>
+                            <div class="col" style="text-align: center;">
+                                <h5>Control data usage while downloading and watching videos on select phones or tablets.</h5>
                             </div>
                         </div>
                     </div>

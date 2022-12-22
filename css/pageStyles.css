@@ -87,27 +87,45 @@ label{
     font-weight: bold;
     font-style: italic;
 }
-.editButton{
-    font-style: italic;
-    text-decoration: none;
-    color: gold;
-}
+
 .editButton:hover{
     color:orangered
 }
 
 .inputChanges{
+    color: black;
     background-color: gray;
     border: none;
 }
+.editButton{
+    font-style: italic;
+    text-decoration: none;
+    color: gold;
+}
 input[type=text]:focus {
     border: 1px solid #555;
-    
 }
 
 .isChecked:checked{
     background-color: orangered;
 }
+
+.currentChange[type=text]{
+    /* border: 1px solid;
+    border-color: #FE5858,#EE9617; */
+
+    border-image: linear-gradient(#FE5858, #EE9617) 30;
+    border-width: 1px;
+    border-style: solid;
+
+    border-radius: 15px;
+}
+.currentChange2[type=text]{
+    border: 1px solid;
+    border-color: #FE5858,#EE9617;
+    border-radius: 15px;
+}
+
 
 /*==================================================== */
 /* Index/Main page */
