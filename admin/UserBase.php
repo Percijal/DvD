@@ -149,12 +149,12 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $row) {
                                 echo'
                                     <tr>
-                                        <td class="td">'.$row['id'].'</td>
+                                        <td class="td"><form id="form'.$row['id'].'" method="GET" action="edit.php">'.$row['id'].'<input type="text" name="id_user" value="'.$row['id'].'" hidden></form></td>
                                         <td class="td">'.$row['email'].'</td>
-                                        <td class="td">'.$row['login'].'</td>
-                                        <td class="td">'.$row['name'].'</td>
-                                        <td class="td">'.$row['surname'].'</td>
-                                        <td class="td tdLast"><a href="#">edit</a> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
+                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="login" value="'.$row['login'].'"></td>
+                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="name" value="'.$row['name'].'"></td>
+                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="surname" value="'.$row['surname'].'"></td>
+                                        <td class="td tdLast"><input form="form'.$row['id'].'" type="submit" value="edit"> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
                                     </tr>
                                 ';
                                 }
@@ -180,26 +180,27 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                             <th class="th">Year of production</th>
                                             <th class="th">Description</th>
                                             <th class="th">Price</th>
-                                            <th class="th thLast">edit || delete</th>
+                                            <th class="th thLast">edit || delete movie</th>
                                         </tr>
                                     ';
                                     foreach ($rows1 as $row) {
                                     echo'
                                         <tr>
-                                            <td class="td">'. $row["id"] .'</td>
+                                            <td class="td"><form id="formMovie'.$row['id'].'" method="GET" action="editFilm.php">'.$row['id'].'<input type="text" name="id_dvd" value="'.$row['id'].'" hidden></form></td>
                                             <td class="td">'. $row["image"] .'</td>
                                             <td class="td">'. $row["title"] .'</td>
                                             <td class="td">'. $row["genre"] .'</td>
                                             <td class="td">'. $row["author"].'</td>
                                             <td class="td">'. $row["year"] .'</td>
-                                            <td class="td">'. $row["descrip"] .'</td>
-                                            <td class="td">'. $row["price"] .'</td>   
-                                            <td class="td tdLast"><a href="#">edit</a> || <a href="deleteFilm.php?id='.$row['id'].'">delete user</a></td>
+                                            <td class="td"><textarea form="formMovie'.$row['id'].'" type="text" name="descrip">'.$row['descrip'].'</textarea></td> 
+                                            <td class="td"><input form="formMovie'.$row['id'].'" type="text" name="price" value="'.$row['price'].'"></td> 
+                                            <td class="td tdLast"><input form="formMovie'.$row['id'].'" type="submit" value="edit"> || <a href="deleteFilm.php?id='.$row['id'].'">delete movie</a></td>
                                         </tr>
                                     ';
                                     }
                                     echo '</table>'
                                     ?>
+                                    <!-- Descrip zrób 400 px myślę -->
                                     <!-- END PHP -->
                                 </div>
                             </div>
@@ -235,3 +236,4 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="textarea.js"></script>
