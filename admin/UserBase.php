@@ -151,10 +151,10 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <td class="td"><form id="form'.$row['id'].'" method="GET" action="edit.php">'.$row['id'].'<input type="text" name="id_user" value="'.$row['id'].'" hidden></form></td>
                                         <td class="td">'.$row['email'].'</td>
-                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="login" value="'.$row['login'].'"></td>
-                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="name" value="'.$row['name'].'"></td>
-                                        <td class="td"><input form="form'.$row['id'].'" type="text" name="surname" value="'.$row['surname'].'"></td>
-                                        <td class="td tdLast"><input form="form'.$row['id'].'" type="submit" value="edit"> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
+                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="login" value="'.$row['login'].'"></td>
+                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="name" value="'.$row['name'].'"></td>
+                                        <td class="td"><input class="inputChanges" form="form'.$row['id'].'" type="text" name="surname" value="'.$row['surname'].'"></td>
+                                        <td class="td tdLast"> <input class="isChecked" type="checkbox" id="" name="" value=""> <input class="inputChanges editButton" form="form'.$row['id'].'" type="submit" value="edit"> || <a href="delete.php?id='.$row['id'].'">delete user</a></td>
                                     </tr>
                                 ';
                                 }
@@ -193,7 +193,7 @@ $rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
                                             <td class="td">'. $row["author"].'</td>
                                             <td class="td">'. $row["year"] .'</td>
                                             <td class="td"><textarea form="formMovie'.$row['id'].'" type="text" name="descrip">'.$row['descrip'].'</textarea></td> 
-                                            <td class="td"><input form="formMovie'.$row['id'].'" type="text" name="price" value="'.$row['price'].'"></td> 
+                                            <td class="td"><input form="formMovie'.$row['id'].'" type="number" step="0.01" min="0" name="price" value="'.$row['price'].'"></td> 
                                             <td class="td tdLast"><input form="formMovie'.$row['id'].'" type="submit" value="edit"> || <a href="deleteFilm.php?id='.$row['id'].'">delete movie</a></td>
                                         </tr>
                                     ';

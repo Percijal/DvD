@@ -87,6 +87,27 @@ label{
     font-weight: bold;
     font-style: italic;
 }
+.editButton{
+    font-style: italic;
+    text-decoration: none;
+    color: gold;
+}
+.editButton:hover{
+    color:orangered
+}
+
+.inputChanges{
+    background-color: gray;
+    border: none;
+}
+input[type=text]:focus {
+    border: 1px solid #555;
+    
+}
+
+.isChecked:checked{
+    background-color: orangered;
+}
 
 /*==================================================== */
 /* Index/Main page */
