@@ -121,7 +121,7 @@ if ($logged)
                     </div>
                     <div class="row">
                         <div class="col" style="text-align: center;">
-                            User management
+                            User & Movie management
                         </div>
                     </div>
                     <div>
@@ -133,11 +133,11 @@ if ($logged)
                                 echo'
                                 <table class="usersData table table-responsive"">
                                     <tr>
-                                        <th class="th">id.</th>
-                                        <th class="th">email</th>
-                                        <th class="th">login</th>
-                                        <th class="th">name</th>
-                                        <th class="th">surname</th>
+                                        <th class="th">Id.</th>
+                                        <th class="th">Email</th>
+                                        <th class="th">Login</th> 
+                                        <th class="th">Name</th>
+                                        <th class="th">Surname</th>
                                         <th class="th thLast">edit || delete</th>
                                     </tr>
                                 ';
@@ -159,6 +159,47 @@ if ($logged)
                             </div>
                         </div>
                         <hr>
+                        <div>
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <!-- Start PHP  --> <!-- Poniżej machniemy info odnosnie filmu. -->
+                                    <?php
+                                    echo'
+                                    <table class="usersData table table-responsive"">
+                                        <tr>
+                                            <th class="th">Id.</th>
+                                            <th class="th">Image</th>
+                                            <th class="th">Title</th>
+                                            <th class="th">Genre</th>
+                                            <th class="th">Author</th>
+                                            <th class="th">Year of production</th>
+                                            <th class="th">Description</th>
+                                            <th class="th">Price</th>
+                                            <th class="th thLast">edit || delete</th>
+                                        </tr>
+                                    ';
+                                    foreach ($rows as $row) {
+                                    echo'
+                                        <tr>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>
+                                            <td class="td">'. " " .'</td>   
+                                            <td class="td tdLast"><a href="#">edit</a> || <a href="delete.php?id='. " " .'">delete user</a></td>
+                                        </tr>
+                                    ';
+                                    }
+                                    echo '</table>'
+                                    ?>
+                                    <!-- END PHP -->
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
                     </div><br>
                     <div class="row">
                         <div class="col" style="text-align: center;">
