@@ -6,6 +6,11 @@ $logged = isset($_SESSION["UserId"]); //boolean
 if ($logged)
     $isAdmin = ($_SESSION["isAdmin"] == "true") ? true : false ; //boolean  
 
+$sql = new SqlLiteQueryBuilder();
+$query1 = $pdo -> query($sql ->select("DVDs", ["*"])
+                ->getSQL());
+$rows1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -178,18 +183,18 @@ if ($logged)
                                             <th class="th thLast">edit || delete</th>
                                         </tr>
                                     ';
-                                    foreach ($rows as $row) {
+                                    foreach ($rows1 as $row) {
                                     echo'
                                         <tr>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>
-                                            <td class="td">'. " " .'</td>   
-                                            <td class="td tdLast"><a href="#">edit</a> || <a href="delete.php?id='. " " .'">delete user</a></td>
+                                            <td class="td">'. $row["id"] .'</td>
+                                            <td class="td">'. $row["image"] .'</td>
+                                            <td class="td">'. $row["title"] .'</td>
+                                            <td class="td">'. $row["genre"] .'</td>
+                                            <td class="td">'. $row["author"].'</td>
+                                            <td class="td">'. $row["year"] .'</td>
+                                            <td class="td">'. $row["descrip"] .'</td>
+                                            <td class="td">'. $row["price"] .'</td>   
+                                            <td class="td tdLast"><a href="#">edit</a> || <a href="deleteFilm.php?id='.$row['id'].'">delete user</a></td>
                                         </tr>
                                     ';
                                     }

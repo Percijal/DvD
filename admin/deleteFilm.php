@@ -2,18 +2,18 @@
 require("../php/db_connect.php");
 
 $sql = new SqlLiteQueryBuilder();
-$query = $pdo -> query($sql ->delete('Users')
+$query = $pdo -> query($sql ->delete('DVDs')
               -> where('id', $_GET["id"])
               -> getSQL() );
 
 $sql = new SqlLiteQueryBuilder();
 $query = $pdo -> query($sql ->delete('Orders')
-            -> where('id_user', $_GET["id"])
+            -> where('id_dvd', $_GET["id"])
             -> getSQL() );
 
 $sql = new SqlLiteQueryBuilder();
 $query = $pdo -> query($sql ->delete('Cart')
-            -> where('id_user', $_GET["id"])
+            -> where('id_dvd', $_GET["id"])
             -> getSQL() );
               
 header("Location: /DvD/admin/UserBase.php");
