@@ -8,7 +8,7 @@
     
         private function __construct()
         {
-            $dsn = 'sqlite:../DB/DVDBase.db';
+            $dsn = 'sqlite:./DB/DVDBase.db';
     
             $this->pdo = new PDO($dsn);
         }
